@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_zuLp4EbCEeyWgceOcxIySQ" name="CONCURSODETALENTOS">
+  <packageImport xmi:type="uml:PackageImport" xmi:id="_zzoKkEbCEeyWgceOcxIySQ">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Class" xmi:id="_DvlQ8EbDEeyWgceOcxIySQ" name="Candidatos">
+    <nestedClassifier xmi:type="uml:Class" xmi:id="_blv_YEbEEeyWgceOcxIySQ" name="Grupo"/>
+    <nestedClassifier xmi:type="uml:Class" xmi:id="_czpV4EbEEeyWgceOcxIySQ" name="Individual"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_FqF10EbDEeyWgceOcxIySQ" name="Audicion"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_zSk2gEbDEeyWgceOcxIySQ" name="Categoria"/>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_3WU_0EbDEeyWgceOcxIySQ" client="_zSk2gEbDEeyWgceOcxIySQ" supplier="_FqF10EbDEeyWgceOcxIySQ"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_6bpyAEbDEeyWgceOcxIySQ" memberEnd="_6btcYEbDEeyWgceOcxIySQ _6bv4oEbDEeyWgceOcxIySQ">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_6bsOQEbDEeyWgceOcxIySQ" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_6bs1UEbDEeyWgceOcxIySQ" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_6btcYEbDEeyWgceOcxIySQ" name="audicion" type="_FqF10EbDEeyWgceOcxIySQ" association="_6bpyAEbDEeyWgceOcxIySQ"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_6bv4oEbDEeyWgceOcxIySQ" name="candidatos" type="_DvlQ8EbDEeyWgceOcxIySQ" association="_6bpyAEbDEeyWgceOcxIySQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_9MWYAEbDEeyWgceOcxIySQ" name="Tribunal"/>
+</uml:Model>

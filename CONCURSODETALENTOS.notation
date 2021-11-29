@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmlns:style="http://www.eclipse.org/papyrus/infra/gmfdiag/style" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_8DE4QEbCEeyWgceOcxIySQ" type="PapyrusUMLClassDiagram" name="CONCURSODETALENTOSdiag" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_Dvo7UEbDEeyWgceOcxIySQ" type="Class_Shape">
+    <children xmi:type="notation:DecorationNode" xmi:id="_DvqJcEbDEeyWgceOcxIySQ" type="Class_NameLabel"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_DvqJcUbDEeyWgceOcxIySQ" type="Class_FloatingNameLabel">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_DvqJckbDEeyWgceOcxIySQ" y="15"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_DvqwgEbDEeyWgceOcxIySQ" type="Class_AttributeCompartment" collapsed="true">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Ic0cIEbDEeyWgceOcxIySQ" source="PapyrusCSSForceValue">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Ic1qQEbDEeyWgceOcxIySQ" key="collapsed" value="true"/>
+      </eAnnotations>
+      <styles xmi:type="notation:TitleStyle" xmi:id="_DvqwgUbDEeyWgceOcxIySQ"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_DvqwgkbDEeyWgceOcxIySQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_Dvqwg0bDEeyWgceOcxIySQ"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_DvqwhEbDEeyWgceOcxIySQ"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_DvrXkEbDEeyWgceOcxIySQ" type="Class_OperationCompartment">
+      <styles xmi:type="notation:TitleStyle" xmi:id="_DvrXkUbDEeyWgceOcxIySQ"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_DvrXkkbDEeyWgceOcxIySQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_DvrXk0bDEeyWgceOcxIySQ"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_DvrXlEbDEeyWgceOcxIySQ"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_DvrXlUbDEeyWgceOcxIySQ" type="Class_NestedClassifierCompartment">
+      <styles xmi:type="notation:TitleStyle" xmi:id="_DvrXlkbDEeyWgceOcxIySQ"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_DvrXl0bDEeyWgceOcxIySQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_DvrXmEbDEeyWgceOcxIySQ"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_DvrXmUbDEeyWgceOcxIySQ"/>
+    </children>
+    <element xmi:type="uml:Class" href="CONCURSODETALENTOS.uml#_DvlQ8EbDEeyWgceOcxIySQ"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Dvo7UUbDEeyWgceOcxIySQ" x="20" y="180"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_FqLVYEbDEeyWgceOcxIySQ" type="Class_Shape">
+    <children xmi:type="notation:DecorationNode" xmi:id="_FqL8cEbDEeyWgceOcxIySQ" type="Class_NameLabel"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_FqL8cUbDEeyWgceOcxIySQ" type="Class_FloatingNameLabel">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_FqL8ckbDEeyWgceOcxIySQ" y="15"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_FqL8c0bDEeyWgceOcxIySQ" type="Class_AttributeCompartment">
+      <styles xmi:type="notation:TitleStyle" xmi:id="_FqL8dEbDEeyWgceOcxIySQ"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_FqL8dUbDEeyWgceOcxIySQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_FqL8dkbDEeyWgceOcxIySQ"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FqL8d0bDEeyWgceOcxIySQ"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_FqL8eEbDEeyWgceOcxIySQ" type="Class_OperationCompartment">
+      <styles xmi:type="notation:TitleStyle" xmi:id="_FqL8eUbDEeyWgceOcxIySQ"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_FqL8ekbDEeyWgceOcxIySQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_FqL8e0bDEeyWgceOcxIySQ"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FqL8fEbDEeyWgceOcxIySQ"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_FqMjgEbDEeyWgceOcxIySQ" type="Class_NestedClassifierCompartment">
+      <styles xmi:type="notation:TitleStyle" xmi:id="_FqMjgUbDEeyWgceOcxIySQ"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_FqMjgkbDEeyWgceOcxIySQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_FqMjg0bDEeyWgceOcxIySQ"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FqMjhEbDEeyWgceOcxIySQ"/>
+    </children>
+    <element xmi:type="uml:Class" href="CONCURSODETALENTOS.uml#_FqF10EbDEeyWgceOcxIySQ"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FqLVYUbDEeyWgceOcxIySQ" x="260" y="160"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_zSnSwEbDEeyWgceOcxIySQ" type="Class_Shape">
+    <children xmi:type="notation:DecorationNode" xmi:id="_zSn50EbDEeyWgceOcxIySQ" type="Class_NameLabel"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_zSn50UbDEeyWgceOcxIySQ" type="Class_FloatingNameLabel">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_zSn50kbDEeyWgceOcxIySQ" y="15"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_zSn500bDEeyWgceOcxIySQ" type="Class_AttributeCompartment">
+      <styles xmi:type="notation:TitleStyle" xmi:id="_zSn51EbDEeyWgceOcxIySQ"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_zSn51UbDEeyWgceOcxIySQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_zSn51kbDEeyWgceOcxIySQ"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zSn510bDEeyWgceOcxIySQ"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_zSn52EbDEeyWgceOcxIySQ" type="Class_OperationCompartment">
+      <styles xmi:type="notation:TitleStyle" xmi:id="_zSn52UbDEeyWgceOcxIySQ"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_zSn52kbDEeyWgceOcxIySQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_zSn520bDEeyWgceOcxIySQ"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zSn53EbDEeyWgceOcxIySQ"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_zSn53UbDEeyWgceOcxIySQ" type="Class_NestedClassifierCompartment">
+      <styles xmi:type="notation:TitleStyle" xmi:id="_zSn53kbDEeyWgceOcxIySQ"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_zSn530bDEeyWgceOcxIySQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_zSn54EbDEeyWgceOcxIySQ"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zSn54UbDEeyWgceOcxIySQ"/>
+    </children>
+    <element xmi:type="uml:Class" href="CONCURSODETALENTOS.uml#_zSk2gEbDEeyWgceOcxIySQ"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zSnSwUbDEeyWgceOcxIySQ" x="572" y="83"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_9MYNMEbDEeyWgceOcxIySQ" type="Class_Shape">
+    <children xmi:type="notation:DecorationNode" xmi:id="_9MY0QEbDEeyWgceOcxIySQ" type="Class_NameLabel"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_9MY0QUbDEeyWgceOcxIySQ" type="Class_FloatingNameLabel">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_9MY0QkbDEeyWgceOcxIySQ" y="15"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_9MY0Q0bDEeyWgceOcxIySQ" type="Class_AttributeCompartment">
+      <styles xmi:type="notation:TitleStyle" xmi:id="_9MY0REbDEeyWgceOcxIySQ"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_9MY0RUbDEeyWgceOcxIySQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_9MY0RkbDEeyWgceOcxIySQ"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9MY0R0bDEeyWgceOcxIySQ"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_9MY0SEbDEeyWgceOcxIySQ" type="Class_OperationCompartment">
+      <styles xmi:type="notation:TitleStyle" xmi:id="_9MY0SUbDEeyWgceOcxIySQ"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_9MY0SkbDEeyWgceOcxIySQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_9MY0S0bDEeyWgceOcxIySQ"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9MY0TEbDEeyWgceOcxIySQ"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_9MZbUEbDEeyWgceOcxIySQ" type="Class_NestedClassifierCompartment">
+      <styles xmi:type="notation:TitleStyle" xmi:id="_9MZbUUbDEeyWgceOcxIySQ"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_9MZbUkbDEeyWgceOcxIySQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_9MZbU0bDEeyWgceOcxIySQ"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9MZbVEbDEeyWgceOcxIySQ"/>
+    </children>
+    <element xmi:type="uml:Class" href="CONCURSODETALENTOS.uml#_9MWYAEbDEeyWgceOcxIySQ"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9MYNMUbDEeyWgceOcxIySQ" x="340" y="380"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_blx0kEbEEeyWgceOcxIySQ" type="Class_Shape">
+    <children xmi:type="notation:DecorationNode" xmi:id="_blyboEbEEeyWgceOcxIySQ" type="Class_NameLabel"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_blyboUbEEeyWgceOcxIySQ" type="Class_FloatingNameLabel">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_blybokbEEeyWgceOcxIySQ" y="15"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_blybo0bEEeyWgceOcxIySQ" type="Class_AttributeCompartment">
+      <styles xmi:type="notation:TitleStyle" xmi:id="_blybpEbEEeyWgceOcxIySQ"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_blybpUbEEeyWgceOcxIySQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_blybpkbEEeyWgceOcxIySQ"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_blybp0bEEeyWgceOcxIySQ"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_blybqEbEEeyWgceOcxIySQ" type="Class_OperationCompartment">
+      <styles xmi:type="notation:TitleStyle" xmi:id="_blybqUbEEeyWgceOcxIySQ"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_blybqkbEEeyWgceOcxIySQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_blybq0bEEeyWgceOcxIySQ"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_blybrEbEEeyWgceOcxIySQ"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_blybrUbEEeyWgceOcxIySQ" type="Class_NestedClassifierCompartment">
+      <styles xmi:type="notation:TitleStyle" xmi:id="_blybrkbEEeyWgceOcxIySQ"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_blzCsEbEEeyWgceOcxIySQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_blzCsUbEEeyWgceOcxIySQ"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_blzCskbEEeyWgceOcxIySQ"/>
+    </children>
+    <element xmi:type="uml:Class" href="CONCURSODETALENTOS.uml#_blv_YEbEEeyWgceOcxIySQ"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_blx0kUbEEeyWgceOcxIySQ" x="140" y="440"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_czrLEEbEEeyWgceOcxIySQ" type="Class_Shape">
+    <children xmi:type="notation:DecorationNode" xmi:id="_czryIEbEEeyWgceOcxIySQ" type="Class_NameLabel"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_czryIUbEEeyWgceOcxIySQ" type="Class_FloatingNameLabel">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_czryIkbEEeyWgceOcxIySQ" y="15"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_czryI0bEEeyWgceOcxIySQ" type="Class_AttributeCompartment">
+      <styles xmi:type="notation:TitleStyle" xmi:id="_czryJEbEEeyWgceOcxIySQ"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_czryJUbEEeyWgceOcxIySQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_czryJkbEEeyWgceOcxIySQ"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_czryJ0bEEeyWgceOcxIySQ"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_czsZMEbEEeyWgceOcxIySQ" type="Class_OperationCompartment">
+      <styles xmi:type="notation:TitleStyle" xmi:id="_czsZMUbEEeyWgceOcxIySQ"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_czsZMkbEEeyWgceOcxIySQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_czsZM0bEEeyWgceOcxIySQ"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_czsZNEbEEeyWgceOcxIySQ"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_czsZNUbEEeyWgceOcxIySQ" type="Class_NestedClassifierCompartment">
+      <styles xmi:type="notation:TitleStyle" xmi:id="_czsZNkbEEeyWgceOcxIySQ"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_czsZN0bEEeyWgceOcxIySQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_czsZOEbEEeyWgceOcxIySQ"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_czsZOUbEEeyWgceOcxIySQ"/>
+    </children>
+    <element xmi:type="uml:Class" href="CONCURSODETALENTOS.uml#_czpV4EbEEeyWgceOcxIySQ"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_czrLEUbEEeyWgceOcxIySQ" y="420"/>
+  </children>
+  <styles xmi:type="notation:StringValueStyle" xmi:id="_8DE4QUbCEeyWgceOcxIySQ" name="diagram_compatibility_version" stringValue="1.4.0"/>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_8DFfUEbCEeyWgceOcxIySQ"/>
+  <styles xmi:type="style:PapyrusDiagramStyle" xmi:id="_8DFfUUbCEeyWgceOcxIySQ" diagramKindId="org.eclipse.papyrus.uml.diagram.class">
+    <owner xmi:type="uml:Model" href="CONCURSODETALENTOS.uml#_zuLp4EbCEeyWgceOcxIySQ"/>
+  </styles>
+  <element xmi:type="uml:Model" href="CONCURSODETALENTOS.uml#_zuLp4EbCEeyWgceOcxIySQ"/>
+  <edges xmi:type="notation:Connector" xmi:id="_3Wc7oEbDEeyWgceOcxIySQ" type="Dependency_Edge" source="_zSnSwEbDEeyWgceOcxIySQ" target="_FqLVYEbDEeyWgceOcxIySQ">
+    <children xmi:type="notation:DecorationNode" xmi:id="_3WdisEbDEeyWgceOcxIySQ" type="Dependency_NameLabel">
+      <styles xmi:type="notation:BooleanValueStyle" xmi:id="_4XqhAEbDEeyWgceOcxIySQ" name="IS_UPDATED_POSITION" booleanValue="true"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_3WdisUbDEeyWgceOcxIySQ" x="1" y="38"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_3WdiskbDEeyWgceOcxIySQ" type="Dependency_StereotypeLabel">
+      <styles xmi:type="notation:BooleanValueStyle" xmi:id="_4X3VUEbDEeyWgceOcxIySQ" name="IS_UPDATED_POSITION" booleanValue="true"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_3Wdis0bDEeyWgceOcxIySQ" x="-1" y="58"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_3Wc7oUbDEeyWgceOcxIySQ"/>
+    <element xmi:type="uml:Dependency" href="CONCURSODETALENTOS.uml#_3WU_0EbDEeyWgceOcxIySQ"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_3Wc7okbDEeyWgceOcxIySQ" points="[572, 120, -643984, -643984]$[340, 80, -643984, -643984]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_3XKtUEbDEeyWgceOcxIySQ" id="(0.0,0.37)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_3XKtUUbDEeyWgceOcxIySQ" id="(0.4,0.0)"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_6cHsEEbDEeyWgceOcxIySQ" type="Association_Edge" source="_Dvo7UEbDEeyWgceOcxIySQ" target="_FqLVYEbDEeyWgceOcxIySQ">
+    <children xmi:type="notation:DecorationNode" xmi:id="_6cITIEbDEeyWgceOcxIySQ" type="Association_StereotypeLabel">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_6cITIUbDEeyWgceOcxIySQ" y="-20"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_6cITIkbDEeyWgceOcxIySQ" type="Association_NameLabel">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_6cITI0bDEeyWgceOcxIySQ" y="20"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_6cITJEbDEeyWgceOcxIySQ" type="Association_TargetRoleLabel">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_6cITJUbDEeyWgceOcxIySQ" y="-20"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_6cITJkbDEeyWgceOcxIySQ" type="Association_SourceRoleLabel">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_6cITJ0bDEeyWgceOcxIySQ" y="20"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_6cI6MEbDEeyWgceOcxIySQ" type="Association_SourceMultiplicityLabel">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_6cI6MUbDEeyWgceOcxIySQ" y="20"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_6cI6MkbDEeyWgceOcxIySQ" type="Association_TargetMultiplicityLabel">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_6cI6M0bDEeyWgceOcxIySQ" y="-20"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_6cHsEUbDEeyWgceOcxIySQ"/>
+    <element xmi:type="uml:Association" href="CONCURSODETALENTOS.uml#_6bpyAEbDEeyWgceOcxIySQ"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_6cHsEkbDEeyWgceOcxIySQ" points="[120, 220, -643984, -643984]$[260, 220, -643984, -643984]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_6dBD8EbDEeyWgceOcxIySQ" id="(1.0,0.4)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_6dBrAEbDEeyWgceOcxIySQ" id="(0.0,0.6)"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_gWfxkEbEEeyWgceOcxIySQ" type="Element_ContainmentEdge" source="_Dvo7UEbDEeyWgceOcxIySQ" target="_blx0kEbEEeyWgceOcxIySQ">
+    <styles xmi:type="notation:FontStyle" xmi:id="_gWfxkUbEEeyWgceOcxIySQ"/>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_gWfxkkbEEeyWgceOcxIySQ" points="[60, 280, -643984, -643984]$[180, 440, -643984, -643984]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_gXNjQEbEEeyWgceOcxIySQ" id="(0.4,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_gXOKUEbEEeyWgceOcxIySQ" id="(0.4,0.0)"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_iOpmAEbEEeyWgceOcxIySQ" type="Element_ContainmentEdge" source="_Dvo7UEbDEeyWgceOcxIySQ" target="_czrLEEbEEeyWgceOcxIySQ">
+    <styles xmi:type="notation:FontStyle" xmi:id="_iOpmAUbEEeyWgceOcxIySQ"/>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_iOpmAkbEEeyWgceOcxIySQ" points="[60, 280, -643984, -643984]$[40, 420, -643984, -643984]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_iPU7cEbEEeyWgceOcxIySQ" id="(0.4,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_iPVigEbEEeyWgceOcxIySQ" id="(0.4,0.0)"/>
+  </edges>
+</notation:Diagram>
