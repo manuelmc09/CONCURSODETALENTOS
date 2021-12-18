@@ -2,7 +2,7 @@ package com.dawjava.entidades;
 
 import java.util.LinkedHashMap;
 
-public class Puntuacion {
+public class Valoracion {
 	//Atributos
 	private int idpuntuacion;
 	private int puntuacion;
@@ -12,7 +12,7 @@ public class Puntuacion {
 	/**
 	 * Constructor por defecto
 	 */
-	public Puntuacion() {
+	public Valoracion() {
 		this.idpuntuacion=0;
 		this.puntuacion=0;
 		this.especial=false;
@@ -25,7 +25,7 @@ public class Puntuacion {
 	 * @param especial
 	 * @param puntuaciones
 	 */
-	public Puntuacion(int idpuntuacion,int puntuacion,boolean especial,LinkedHashMap<Audicion,Integer>puntuaciones) {
+	public Valoracion(int idpuntuacion,int puntuacion,boolean especial,LinkedHashMap<Audicion,Integer>puntuaciones) {
 		this.idpuntuacion=idpuntuacion;
 		this.puntuacion=puntuacion;
 		this.especial=especial;
@@ -36,7 +36,7 @@ public class Puntuacion {
 	 * @param nota
 	 */
 	
-	public Puntuacion(Puntuacion nota) {
+	public Valoracion(Valoracion nota) {
 		this.idpuntuacion=nota.idpuntuacion;
 		this.puntuacion=nota.puntuacion;
 		this.especial=nota.especial;

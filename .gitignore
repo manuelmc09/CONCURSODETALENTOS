@@ -1,0 +1,8 @@
+#Ignorar todos los archivos 
+*.di
+
+#Ignorar todos los archivos de 
+*.notation
+
+#Ignorar los archivos de diagrama de clases
+*.uml

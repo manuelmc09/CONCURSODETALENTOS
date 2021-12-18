@@ -11,6 +11,7 @@ public class Audicion {
 	private Candidatos aspirante;
 	private Tribunal[] jurado;
 	private Categoria idcategoria;
+	private Convocatoria idconvocatoria;
 	
 	//Constructores
 	/**
@@ -23,6 +24,7 @@ public class Audicion {
 		this.aspirante=null;
 		this.jurado=new Tribunal[3];
 		this.idcategoria=null;
+		this.idconvocatoria=null;
 	}
 	
 	/**
@@ -46,26 +48,30 @@ public class Audicion {
 	 * @param aspirante
 	 * @param jurado
 	 * @param idcategoria
+	 * @param idconvocatoria
 	 */
-	public Audicion(int idaudicion,float puntuacionmedia,String lugar,Candidatos aspirante,Tribunal[]jurado,Categoria idcategoria) {
+	public Audicion(int idaudicion,float puntuacionmedia,String lugar,Candidatos aspirante,Tribunal[]jurado,Categoria idcategoria,Convocatoria idconvocatoria) {
 		this.idaudicion=idaudicion;
 		this.puntuacionmedia=puntuacionmedia;
 		this.lugar=lugar;
 		this.aspirante=aspirante;
 		this.jurado=jurado;
 		this.idcategoria=idcategoria;
+		this.idconvocatoria=idconvocatoria;
 	}
 	/**
 	 * Constructor copia para las Audiciones
 	 * @param prueba
 	 */
 	public Audicion(Audicion prueba) {
-		this.idaudicion=idaudicion;
-		this.puntuacionmedia=puntuacionmedia;
-		this.lugar=lugar;
-		this.aspirante=aspirante;
-		this.jurado=jurado;
-		this.idcategoria=idcategoria;
+		this.idaudicion=prueba.idaudicion;
+		this.puntuacionmedia=prueba.puntuacionmedia;
+		this.lugar=prueba.lugar;
+		this.aspirante=prueba.aspirante;
+		this.jurado=prueba.jurado;
+		this.idcategoria=prueba.idcategoria;
+		this.idconvocatoria=prueba.idconvocatoria;
+		
 	}
 	
 	//Metodos publicos
@@ -117,6 +123,15 @@ public class Audicion {
 	public void setIdcategoria(Categoria idcategoria) {
 		this.idcategoria = idcategoria;
 	}
+	
+
+	public Convocatoria getIdconvocatoria() {
+		return idconvocatoria;
+	}
+
+	public void setIdconvocatoria(Convocatoria idconvocatoria) {
+		this.idconvocatoria = idconvocatoria;
+	}
 
 	/**
 	 * Metodo para ver toda la información de la Audicion
@@ -126,7 +141,7 @@ public class Audicion {
 	@Override
 	public String toString() {
 		return "Audicion [idaudicion=" + idaudicion + ", puntuacionmedia=" + puntuacionmedia + ", lugar=" + lugar
-				+ ", aspirante=" + aspirante + ", jurado=" + Arrays.toString(jurado) +"idcategoria="+ idcategoria+"]";
+				+ ", aspirante=" + aspirante + ", jurado=" + Arrays.toString(jurado) +"idcategoria="+ idcategoria+"idconvocatoria="+idconvocatoria+"]";
 	}
 	
 	
