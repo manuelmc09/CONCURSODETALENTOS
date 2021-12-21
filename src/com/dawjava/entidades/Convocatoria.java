@@ -19,7 +19,7 @@ public class Convocatoria implements Comparable<Convocatoria> {
 	private String lugar;
 
 	// Conjunto de candidatos que actúan en cada convocatoria
-	// HashMap<key,value>Candidatos
+	// HashMap<key,value>Candidato
 
 	private LinkedHashMap<Integer, String> candidatos = new LinkedHashMap<Integer, String>();
 	// Campo para las 3 personas que forman el tribunal de cada convocatoria
@@ -167,7 +167,7 @@ public class Convocatoria implements Comparable<Convocatoria> {
 		 * ", candidatos=" + candidatos + ", jueces=" + Arrays.toString(jueces) ;
 		 */
 		String cadena2 = "";
-		Iterator<Candidatos> it_candidatos=((Object) this.getCandidatos()).iterator();
+		Iterator<Candidato> it_candidatos=((Object) this.getCandidatos()).iterator();
 		
 		while(it_candidatos.hasNext()) {
 			

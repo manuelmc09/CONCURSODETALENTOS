@@ -4,7 +4,7 @@ import java.sql.Date;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
-public class Grupo extends Candidatos {
+public class Grupo extends Candidato {
 	static final DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
 	//Atributos
@@ -34,10 +34,10 @@ public class Grupo extends Candidatos {
 		
 	}
 	/**
-	 * Constructor copia para los Candidatos-bandas
+	 * Constructor copia para los Candidato-bandas
 	 * @param bandas
 	 */
-	public Grupo(Candidatos bandas) {
+	public Grupo(Candidato bandas) {
 		super(bandas);
 		 if (Grupo.class.isInstance(bandas)) {
 	            this.componentes = ((Grupo) bandas).getComponentes();

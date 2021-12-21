@@ -3,11 +3,12 @@ package com.dawjava.entidades;
 import java.sql.Date;
 import java.time.format.DateTimeFormatter;
 
-public class Individual extends Candidatos {
+public class Individual extends Candidato {
 	static final DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
 	//Atributos
 	private int edad;
+	private Persona persona;
 	//Constructores
 	/**
 	 * Constructor por defecto
@@ -33,7 +34,7 @@ public class Individual extends Candidatos {
 	 * @param solista
 	 * @param edad
 	 */
-	public Individual(Candidatos solista,int edad) {
+	public Individual(Candidato solista,int edad) {
 		super(solista);
 		this.edad=edad;
 		 

@@ -42,7 +42,7 @@ public class Concurso {
 								System.out.println("Opcion incorrecta.\n");
 								continue;
 							}
-							//Aquí ya se tienen las opciones del menu para Candidatos individuales y grupos
+							//Aquí ya se tienen las opciones del menu para Candidato individuales y grupos
 
 						} catch (InputMismatchException e) {
 							System.out.println("La eleccion debe de ser un número entre 1 y 3. Intente de nuevo ");
@@ -80,7 +80,7 @@ public class Concurso {
 								System.out.println("Opcion incorrecta.\n");
 								continue;
 							}
-							//Aquí ya se tienen las opciones del menu para Candidatos individuales y grupos
+							//Aquí ya se tienen las opciones del menu para Candidato individuales y grupos
 							FachadaJuez portaljuez=new FachadaJuez(subopcion);
 
 						} catch (InputMismatchException e) {
