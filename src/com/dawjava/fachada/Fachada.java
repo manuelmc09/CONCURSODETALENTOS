@@ -4,7 +4,11 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
+import com.dawjava.entidades.*;
+
+
 public class Fachada {
+	FachadaCandidatoIndividual portalindividual;
 	Scanner teclado=new Scanner(System.in);
 	
 	public Fachada() {
@@ -41,5 +45,7 @@ public class Fachada {
 		System.out.println("2. Otorgar pase de oro ");
 		System.out.println("3. Salir ");
 	}
+	
+
 
 }

@@ -8,6 +8,8 @@ import java.time.format.DateTimeFormatter;
 
 import com.dawjava.entidades.*;
 import com.dawjava.fachada.Fachada;
+import com.dawjava.fachada.FachadaCandidatoGrupo;
+import com.dawjava.fachada.FachadaCandidatoIndividual;
 import com.dawjava.fachada.FachadaJuez;
 import com.dawjava.fachada.FachadaTecnico;
 
@@ -30,7 +32,7 @@ public class Concurso {
 					System.out.println("Opcion incorrecta.\n");
 					continue;
 				}
-				int subopcion = -1;
+				 int subopcion = -1;
 				switch (opcion) {
 				case 1:
 					do {
@@ -43,6 +45,11 @@ public class Concurso {
 								continue;
 							}
 							//Aquí ya se tienen las opciones del menu para Candidatos individuales y grupos
+							if(subopcion==1) {
+								FachadaCandidatoIndividual portalindividual=new FachadaCandidatoIndividual(subopcion);
+							}else if(subopcion==2) {
+								FachadaCandidatoGrupo portalgrupo=new FachadaCandidatoGrupo(subopcion);
+							}
 
 						} catch (InputMismatchException e) {
 							System.out.println("La eleccion debe de ser un número entre 1 y 3. Intente de nuevo ");

@@ -15,7 +15,7 @@ public class Candidatos {
 	private String nombre;
 	private String ciudad;
 	private Date fechainscripcion;
-	private boolean finalista;
+	private boolean finalista=false;
 	
 	
 
@@ -23,13 +23,7 @@ public class Candidatos {
 	/**
 	 * Constructor por defecto
 	 */
-	public Candidatos() {
-		this.idcandidato = idcandidato;
-		this.nombre = nombre;
-		this.ciudad = ciudad;
-		this.fechainscripcion = fechainscripcion;
-		this.finalista = finalista;
-		
+	public Candidatos() {	
 		
 	}
 	

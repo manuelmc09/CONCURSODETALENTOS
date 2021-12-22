@@ -15,12 +15,6 @@ public class Persona {
 	 * Constructor por defecto
 	 */
 	public Persona() {
-		this.idpersona=0;
-		this.nombre="";
-		this.email="";
-		this.dni="";
-		this.telefono="";
-	
 		
 	}
 	/**

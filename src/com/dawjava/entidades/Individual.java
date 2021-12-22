@@ -53,9 +53,5 @@ public class Individual extends Candidatos {
 	public String toString() {
 		return super.toString()+"Individual [edad=" + edad + "]";
 	}
-	
-	
-	
-	
 
 }

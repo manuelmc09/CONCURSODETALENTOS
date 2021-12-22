@@ -1,30 +1,27 @@
 package com.dawjava.entidades;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Audicion {
 	//Atributos
 	private int idaudicion;
-	private float puntuacionmedia;
+	private float puntuacionmedia=0.0F;
 	private String lugar;
+	private java.time.LocalDateTime fechahora;
+	//java.sql.Date ff=Date.valueOf(fechahora.toString());
 	private Candidatos aspirante;
-	private Tribunal[] jurado;
-	private Categoria idcategoria;
-	private Convocatoria idconvocatoria;
+	private Tribunal[] jurado=new Tribunal[3];
+	private Categoria categoria;
+	private Convocatoria convocatoria;
 	
 	//Constructores
 	/**
 	 * Constructor por defecto
 	 */
 	public Audicion() {
-		this.idaudicion=0;
-		this.puntuacionmedia=0;
-		this.lugar="";
-		this.aspirante=null;
-		this.jurado=new Tribunal[3];
-		this.idcategoria=null;
-		this.idconvocatoria=null;
+	
 	}
 	
 	/**
@@ -35,8 +32,6 @@ public class Audicion {
 	 */
 	public Audicion(int idaudicion,Candidatos aspirante,Tribunal[]jurado) {
 		this.idaudicion=idaudicion;
-		this.puntuacionmedia=puntuacionmedia;
-		this.lugar=lugar;
 		this.aspirante=aspirante;
 		this.jurado=jurado;
 	}
@@ -45,19 +40,21 @@ public class Audicion {
 	 * @param idaudicion
 	 * @param puntuacionmedia
 	 * @param lugar
+	 * @param fechahora
 	 * @param aspirante
 	 * @param jurado
-	 * @param idcategoria
-	 * @param idconvocatoria
+	 * @param categoria
+	 * @param convocatoria
 	 */
-	public Audicion(int idaudicion,float puntuacionmedia,String lugar,Candidatos aspirante,Tribunal[]jurado,Categoria idcategoria,Convocatoria idconvocatoria) {
+	public Audicion(int idaudicion,float puntuacionmedia,String lugar,LocalDateTime fechahora,Candidatos aspirante,Tribunal[]jurado,Categoria idcategoria,Convocatoria idconvocatoria) {
 		this.idaudicion=idaudicion;
 		this.puntuacionmedia=puntuacionmedia;
 		this.lugar=lugar;
+		this.fechahora=fechahora;
 		this.aspirante=aspirante;
 		this.jurado=jurado;
-		this.idcategoria=idcategoria;
-		this.idconvocatoria=idconvocatoria;
+		this.categoria=idcategoria;
+		this.convocatoria=idconvocatoria;
 	}
 	/**
 	 * Constructor copia para las Audiciones
@@ -67,10 +64,16 @@ public class Audicion {
 		this.idaudicion=prueba.idaudicion;
 		this.puntuacionmedia=prueba.puntuacionmedia;
 		this.lugar=prueba.lugar;
+		this.fechahora=fechahora;
 		this.aspirante=prueba.aspirante;
+		int i=0;
+		for(Tribunal t:prueba.jurado) {
+			this.jurado[i]=new Tribunal(t);
+			i++;
+		}
 		this.jurado=prueba.jurado;
-		this.idcategoria=prueba.idcategoria;
-		this.idconvocatoria=prueba.idconvocatoria;
+		this.categoria=prueba.categoria;
+		this.convocatoria=prueba.convocatoria;
 		
 	}
 	
@@ -114,35 +117,45 @@ public class Audicion {
 	public void setJurado(Tribunal[] jurado) {
 		this.jurado = jurado;
 	}
-	
-	
-	public Categoria getIdcategoria() {
-		return idcategoria;
+
+	public java.time.LocalDateTime getFechahora() {
+		return fechahora;
 	}
 
-	public void setIdcategoria(Categoria idcategoria) {
-		this.idcategoria = idcategoria;
-	}
-	
-
-	public Convocatoria getIdconvocatoria() {
-		return idconvocatoria;
+	public void setFechahora(java.time.LocalDateTime fechahora) {
+		this.fechahora = fechahora;
 	}
 
-	public void setIdconvocatoria(Convocatoria idconvocatoria) {
-		this.idconvocatoria = idconvocatoria;
+	public Categoria getCategoria() {
+		return categoria;
+	}
+
+	public void setCategoria(Categoria categoria) {
+		this.categoria = categoria;
+	}
+
+	public Convocatoria getConvocatoria() {
+		return convocatoria;
+	}
+
+	public void setConvocatoria(Convocatoria convocatoria) {
+		this.convocatoria = convocatoria;
 	}
 
 	/**
 	 * Metodo para ver toda la información de la Audicion
 	 * @return toda la información de la Audición
 	 */
-
 	@Override
 	public String toString() {
 		return "Audicion [idaudicion=" + idaudicion + ", puntuacionmedia=" + puntuacionmedia + ", lugar=" + lugar
-				+ ", aspirante=" + aspirante + ", jurado=" + Arrays.toString(jurado) +"idcategoria="+ idcategoria+"idconvocatoria="+idconvocatoria+"]";
+				+ ", fechahora=" + fechahora + ", aspirante=" + aspirante + ", jurado=" + Arrays.toString(jurado)
+				+ ", categoria=" + categoria + ", convocatoria=" + convocatoria + "]";
 	}
+
+
+
+	
 	
 	
 	

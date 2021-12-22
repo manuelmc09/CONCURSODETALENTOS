@@ -18,16 +18,20 @@ public class Convocatoria implements Comparable<Convocatoria> {
 	private Date fecha;
 	private String lugar;
 
-	// Conjunto de candidatos que actúan en cada convocatoria
+	// Conjunto de candidatos que actúan en cada convocatoria se codifica mediante
+	// un
+	// diccionario (Map<k,V) para poder acceder a su nombre artistico (Valor--Value)
+	// desde un identificador de candidato (Clave-->Key)
+	// No puede haber 2 nombres artisticos repetidos ni 2 candidatos con el mismo
+	// nombre artistisco
 	// HashMap<key,value>Candidatos
-
 	private LinkedHashMap<Integer, String> candidatos = new LinkedHashMap<Integer, String>();
-	// Campo para las 3 personas que forman el tribunal de cada convocatoria
 
+	// Campo para las 3 personas que forman el tribunal de cada convocatoria
 	private Tribunal[] jueces = new Tribunal[3];
+
 	// Campo para determinar a que Categoria pertenecen cada audicion de esa
 	// convocatoria
-
 	private Categoria category;
 
 	// Constructores
@@ -36,25 +40,26 @@ public class Convocatoria implements Comparable<Convocatoria> {
 	 * Constructor con parametros
 	 */
 	public Convocatoria() {
-		this.idconvocatoria = 0;
 	}
 
 	/**
 	 * Constructor con 4 parametros
+	 * 
 	 * @param idconvocatoria
 	 * @param fecha
 	 * @param lugar
-	 * @param candidatos
+	 * @param category
 	 */
-	public Convocatoria(int idconvocatoria, Date fecha, String lugar, LinkedHashMap<Integer, String> candidatos) {
+	public Convocatoria(int idconvocatoria, Date fecha, String lugar,Categoria category) {
 		this.idconvocatoria = idconvocatoria;
 		this.fecha = fecha;
 		this.lugar = lugar;
-		this.candidatos = candidatos;
+		this.category=category;
 	}
 
 	/**
 	 * Constructor con todos los parametros
+	 * 
 	 * @param idconvocatoria
 	 * @param fecha
 	 * @param lugar
@@ -71,18 +76,19 @@ public class Convocatoria implements Comparable<Convocatoria> {
 		this.jueces = jueces;
 		this.category = category;
 	}
-	
+
 	/**
 	 * Constructor con un parametro, constructor-copia de la propia clase
+	 * 
 	 * @param c
 	 */
 	public Convocatoria(Convocatoria c) {
-		this.idconvocatoria=c.idconvocatoria;
-		this.fecha=c.fecha;
-		this.lugar=c.lugar;
-		this.candidatos=c.candidatos;
-		this.jueces=c.jueces;
-		this.category=c.category;
+		this.idconvocatoria = c.idconvocatoria;
+		this.fecha = c.fecha;
+		this.lugar = c.lugar;
+		this.candidatos = c.candidatos;
+		this.jueces = c.jueces;
+		this.category = c.category;
 	}
 
 	// Metodos publicos
@@ -144,12 +150,11 @@ public class Convocatoria implements Comparable<Convocatoria> {
 	@Override
 	public int compareTo(Convocatoria c) {
 		return this.getFecha().compareTo(c.getFecha());
-		/*int compara=getFecha().compareTo(c.getFecha());
-		if(compara==0) {
-			compara=getLugar().compareToIgnoreCase(c.getLugar());
-		}
-		return compara;*/
-		//En el caso de ordenar/comparar por fecha y luego por lugar de la convocatoria
+		/*
+		 * int compara=getFecha().compareTo(c.getFecha()); if(compara==0) {
+		 * compara=getLugar().compareToIgnoreCase(c.getLugar()); } return compara;
+		 */
+		// En el caso de ordenar/comparar por fecha y luego por lugar de la convocatoria
 	}
 
 	/**
@@ -161,16 +166,21 @@ public class Convocatoria implements Comparable<Convocatoria> {
 	public String toString() {
 		final DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 		String cadena = "";
-		cadena += "Convocatoria =>\nidconvocatoria:\t" + idconvocatoria + "\nlugar: " + lugar + "\nfecha: "
-				+ fecha.toLocalDate().format(dateFormatter) + "\ncategoria: " + category;
+		cadena += "Convocatoria =>"+
+				"\nidconvocatoria:\t" + idconvocatoria + 
+				"\nlugar: " + lugar + 
+				"\nfecha: "+ fecha.toLocalDate().format(dateFormatter) + 
+				"\ncategoria: " + category;
 		/**
 		 * ", candidatos=" + candidatos + ", jueces=" + Arrays.toString(jueces) ;
 		 */
 		String cadena2 = "";
-		Iterator<Candidatos> it_candidatos=((Object) this.getCandidatos()).iterator();
+		Iterator<Candidatos> it_candidatos = Candidatos.iterator();
 		
-		while(it_candidatos.hasNext()) {
-			
+
+		while (it_candidatos.hasNext()) {
+			Candidatos c=it_candidatos.next();
+			cadena2+="\nNombre: "+c.getNombre();
 		}
 
 		return cadena;
