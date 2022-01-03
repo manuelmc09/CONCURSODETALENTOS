@@ -15,5 +15,9 @@ public class PuntuacionDAO {
 		this.conexion = conexion;
 	}
 
+	public Connection getConexion() {
+		return conexion;
+	}
+
 	
 }

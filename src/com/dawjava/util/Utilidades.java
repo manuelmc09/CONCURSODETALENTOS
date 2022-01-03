@@ -36,14 +36,11 @@ public class Utilidades {
 	 * @param p
 	 * @return
 	 */
-	public boolean validarPuntacion(Puntuacion p) {
-		if (p.getIdpuntuacion() < 0) {
-			return false;
-		}
+	public static boolean validarPuntacion(int puntuacion) {
 
-		if (p.getPuntuacion() < 0) {
-			if (p.getPuntuacion() % 2 != 0) {
-				if (p.getPuntuacion() > 10) {
+		if (puntuacion < 0) {
+			if (puntuacion % 2 != 0) {
+				if (puntuacion > 10) {
 					return false;
 				}
 			}
@@ -57,9 +54,11 @@ public class Utilidades {
 	 * @param p
 	 * @return
 	 */
-	public boolean validarPasedeoro(Puntuacion p) {
-		if (p.isEspecial() == true) {
+	public static boolean validarPasedeoro(boolean paseOro) {
+		Puntuacion p = new Puntuacion();
+		if (paseOro == true) {
 			p.setPuntuacion(10);
+			return true;
 		}
 		return false;
 	}
@@ -70,8 +69,8 @@ public class Utilidades {
 	 * @param t
 	 * @return
 	 */
-	public boolean validarTribunal(Tribunal t) {
-		if (t.getIdtribunal() < 0) {
+	public static boolean validarTribunal(int idtribunal) {
+		if (idtribunal <= 0) {
 			return false;
 		}
 		return true;
@@ -83,8 +82,8 @@ public class Utilidades {
 	 * @param a
 	 * @return
 	 */
-	public boolean validarAudicion(Audicion a) {
-		if (a.getIdaudicion() < 0) {
+	public static boolean validarAudicion(int idaudicion) {
+		if (idaudicion <= 0) {
 			return false;
 		}
 		return true;

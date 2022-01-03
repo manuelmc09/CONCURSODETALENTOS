@@ -7,13 +7,13 @@ public class Puntuacion {
 	private int idpuntuacion;
 	private int puntuacion = 0;
 	private boolean especial = false;
-	private LinkedHashMap<Audicion, Integer> valoraciones = new LinkedHashMap<Audicion, Integer>();
+	private LinkedHashMap<Audicion, Integer> puntuaciones = new LinkedHashMap<Audicion, Integer>();
 
 	/**
 	 * Constructor por defecto
 	 */
 	public Puntuacion() {
-		this.valoraciones = new LinkedHashMap<Audicion, Integer>();
+		this.puntuaciones = new LinkedHashMap<Audicion, Integer>();
 	}
 
 	/**
@@ -29,7 +29,7 @@ public class Puntuacion {
 		this.idpuntuacion = idpuntuacion;
 		this.puntuacion = puntuacion;
 		this.especial = especial;
-		this.valoraciones = puntuaciones;
+		this.puntuaciones = puntuaciones;
 	}
 
 	/**
@@ -42,7 +42,7 @@ public class Puntuacion {
 		this.idpuntuacion = nota.idpuntuacion;
 		this.puntuacion = nota.puntuacion;
 		this.especial = nota.especial;
-		this.valoraciones = nota.valoraciones;
+		this.puntuaciones = nota.puntuaciones;
 	}
 
 	// Metodos publicos
@@ -72,11 +72,11 @@ public class Puntuacion {
 	}
 
 	public LinkedHashMap<Audicion, Integer> getPuntuaciones() {
-		return valoraciones;
+		return puntuaciones;
 	}
 
 	public void setPuntuaciones(LinkedHashMap<Audicion, Integer> puntuaciones) {
-		this.valoraciones = puntuaciones;
+		this.puntuaciones = puntuaciones;
 	}
 
 	/**
@@ -87,11 +87,9 @@ public class Puntuacion {
 	@Override
 	public String toString() {
 		return "Puntuacion [idpuntuacion=" + idpuntuacion + ", puntuacion=" + puntuacion + ", especial=" + especial
-				+ ", puntuaciones=" + valoraciones + "]";
+				+ ", puntuaciones=" + puntuaciones + "]";
 	}
 	
-	public boolean validarPuntuacion(Puntuacion puntuacion) {
-		return true;
-	}
+	
 
 }
