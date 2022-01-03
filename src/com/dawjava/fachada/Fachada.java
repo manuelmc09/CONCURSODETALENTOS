@@ -6,13 +6,11 @@ import java.util.Scanner;
 
 import com.dawjava.entidades.*;
 
-
 public class Fachada {
-	FachadaCandidatoIndividual portalindividual;
-	Scanner teclado=new Scanner(System.in);
-	
+	Scanner teclado = new Scanner(System.in);
+
 	public Fachada() {
-		
+
 	}
 
 	public void mostrarMenuSeleccionRol() {
@@ -32,10 +30,10 @@ public class Fachada {
 
 	public void mostrarMenuPrincipalTecnico() {
 		System.out.println("Seleccione la opcion a realizar: \n");
-		System.out.println("1. Categorias ");
-		System.out.println("2. Tribunales ");
-		System.out.println("3. Audicciones");
-		System.out.println("4. Convocatorias");
+		System.out.println("1. Gestionar Categorias ");
+		System.out.println("2. Gestionar Tribunales ");
+		System.out.println("3. Gestionar Convocatorias ");
+		System.out.println("4. Gestionar Audiciones ");		
 		System.out.println("5. Salir ");
 	}
 
@@ -45,7 +43,6 @@ public class Fachada {
 		System.out.println("2. Otorgar pase de oro ");
 		System.out.println("3. Salir ");
 	}
+
 	
-
-
 }

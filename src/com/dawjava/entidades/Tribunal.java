@@ -120,4 +120,15 @@ public class Tribunal {
 				+ ", telefono=" + telefono + ", castings=" + castings + "]";
 	}
 
+	/**
+	 * Función que marca el orden de importación/exportación de los campos básicos
+	 * de un Tribunal: idtribunal|nombre|email|dni|telefono
+	 * 
+	 * @return idtribunal|nombre|email|dni|telefono
+	 */
+	public String data() {
+		String ret;
+		ret = this.idtribunal + "|" + this.nombre + "|" + this.email + "|" + this.dni + "|" + this.telefono;
+		return ret;
+	}
 }

@@ -20,7 +20,7 @@ public class FachadaJuez {
 			System.out.println("Volviendo al Menu Principal.....");
 			break;
 		default:
-			System.out.println("Opcion incorrecta");
+			System.out.println("Opcion incorrecta.");
 		}
 	}
 

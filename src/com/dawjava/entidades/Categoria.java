@@ -21,12 +21,18 @@ public class Categoria {
 	/**
 	 * Constructor con parametros
 	 * 
+<<<<<<< HEAD
+=======
+	 * @param cat
+>>>>>>> 4900dbb4f988277b9adb7f91c24ffb0c9a3fde66
 	 * @param idCategoria
 	 * @param categoria
 	 */
 	public Categoria(int idCategoria, String categoria) {
 		this.categoria = categoria;
-		this.idcategoria = idcategoria;
+
+		this.idcategoria = idCategoria;
+
 	}
 
 	// Metodos publicos

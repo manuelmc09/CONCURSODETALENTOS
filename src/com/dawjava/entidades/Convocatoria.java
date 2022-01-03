@@ -6,6 +6,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedHashMap;
+import java.util.Set;
 import java.util.Iterator;
 
 public class Convocatoria implements Comparable<Convocatoria> {
@@ -25,6 +26,9 @@ public class Convocatoria implements Comparable<Convocatoria> {
 	// No puede haber 2 nombres artisticos repetidos ni 2 candidatos con el mismo
 	// nombre artistisco
 	// HashMap<key,value>Candidatos
+	// Conjunto de candidatos que actúan en cada convocatoria
+	// HashMap<key,value>Candidato
+
 	private LinkedHashMap<Integer, String> candidatos = new LinkedHashMap<Integer, String>();
 
 	// Campo para las 3 personas que forman el tribunal de cada convocatoria
@@ -50,11 +54,11 @@ public class Convocatoria implements Comparable<Convocatoria> {
 	 * @param lugar
 	 * @param category
 	 */
-	public Convocatoria(int idconvocatoria, Date fecha, String lugar,Categoria category) {
+	public Convocatoria(int idconvocatoria, Date fecha, String lugar, Categoria category) {
 		this.idconvocatoria = idconvocatoria;
 		this.fecha = fecha;
 		this.lugar = lugar;
-		this.category=category;
+		this.category = category;
 	}
 
 	/**
@@ -166,24 +170,28 @@ public class Convocatoria implements Comparable<Convocatoria> {
 	public String toString() {
 		final DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 		String cadena = "";
-		cadena += "Convocatoria =>"+
-				"\nidconvocatoria:\t" + idconvocatoria + 
-				"\nlugar: " + lugar + 
-				"\nfecha: "+ fecha.toLocalDate().format(dateFormatter) + 
-				"\ncategoria: " + category;
+		cadena += "Convocatoria =>" + "\nidconvocatoria:\t" + idconvocatoria + "\nlugar: " + lugar + "\nfecha: "
+				+ fecha.toLocalDate().format(dateFormatter) + "\ncategoria: " + category;
 		/**
 		 * ", candidatos=" + candidatos + ", jueces=" + Arrays.toString(jueces) ;
 		 */
 		String cadena2 = "";
-		Iterator<Candidatos> it_candidatos = Candidatos.iterator();
-		
+		Set<Integer> identificadores = candidatos.keySet();
+		Iterator it_candidatos = identificadores.iterator();
 
 		while (it_candidatos.hasNext()) {
-			Candidatos c=it_candidatos.next();
-			cadena2+="\nNombre: "+c.getNombre();
+			// Candidatos c=it_candidatos.next();
+			Integer clave = (Integer) it_candidatos.next();
+			String nombre_artistico = candidatos.get(clave);
+
+			cadena2 += "\nNombre: " + nombre_artistico;
 		}
 
-		return cadena;
+		String cadena3 = "";
+		for (int i = 0; i < jueces.length; i++) {
+			System.out.println(jueces[i].getNombre() + jueces[i].getDni());
+		}
+		return cadena+cadena2+cadena3;
 	}
 
 }

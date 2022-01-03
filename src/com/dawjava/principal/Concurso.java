@@ -37,6 +37,7 @@ public class Concurso {
 				case 1:
 					do {
 						System.out.println("\nEligio rol  de Candidato/a-s");
+						System.out.println("-------------------------------\n");
 						portal.mostrarMenuPrincipalCandidato();
 						try {
 							subopcion = teclado.nextInt();
@@ -44,12 +45,14 @@ public class Concurso {
 								System.out.println("Opcion incorrecta.\n");
 								continue;
 							}
+
 							//Aquí ya se tienen las opciones del menu para Candidatos individuales y grupos
 							if(subopcion==1) {
 								FachadaCandidatoIndividual portalindividual=new FachadaCandidatoIndividual(subopcion);
 							}else if(subopcion==2) {
 								FachadaCandidatoGrupo portalgrupo=new FachadaCandidatoGrupo(subopcion);
 							}
+
 
 						} catch (InputMismatchException e) {
 							System.out.println("La eleccion debe de ser un número entre 1 y 3. Intente de nuevo ");
@@ -60,6 +63,8 @@ public class Concurso {
 				case 2:
 					do {
 						System.out.println("\nEligio rol de Técnico-a");
+						System.out.println("--------------------------\n");
+
 						portal.mostrarMenuPrincipalTecnico();
 						try {
 							subopcion = teclado.nextInt();
@@ -79,6 +84,7 @@ public class Concurso {
 				case 3:
 					do {
 						System.out.println("\nEligio rol de Juez-a");
+						System.out.println("----------------------\n");
 						portal.mostrarMenuPrincipalJuez();
 
 						try {
@@ -87,7 +93,7 @@ public class Concurso {
 								System.out.println("Opcion incorrecta.\n");
 								continue;
 							}
-							//Aquí ya se tienen las opciones del menu para Candidatos individuales y grupos
+							//Aquí ya se tienen las opciones del menu para Candidato individuales y grupos
 							FachadaJuez portaljuez=new FachadaJuez(subopcion);
 
 						} catch (InputMismatchException e) {

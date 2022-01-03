@@ -5,38 +5,41 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Audicion {
-	//Atributos
+	// Atributos
 	private int idaudicion;
-	private float puntuacionmedia=0.0F;
+	private float puntuacionmedia = 0.0F;
 	private String lugar;
 	private java.time.LocalDateTime fechahora;
-	//java.sql.Date ff=Date.valueOf(fechahora.toString());
-	private Candidatos aspirante;
-	private Tribunal[] jurado=new Tribunal[3];
+	// java.sql.Date ff=Date.valueOf(fechahora.toString());
+	private Candidato aspirante;
+	private Tribunal[] jurado = new Tribunal[3];
 	private Categoria categoria;
 	private Convocatoria convocatoria;
-	
-	//Constructores
+
+	// Constructores
 	/**
 	 * Constructor por defecto
 	 */
 	public Audicion() {
-	
+
 	}
-	
+
 	/**
 	 * Constructor con 3 parametros
+	 * 
 	 * @param idaudicion
 	 * @param aspirante
 	 * @param jurado
 	 */
-	public Audicion(int idaudicion,Candidatos aspirante,Tribunal[]jurado) {
-		this.idaudicion=idaudicion;
-		this.aspirante=aspirante;
-		this.jurado=jurado;
+	public Audicion(int idaudicion, Candidato aspirante, Tribunal[] jurado) {
+		this.idaudicion = idaudicion;
+		this.aspirante = aspirante;
+		this.jurado = jurado;
 	}
+
 	/**
 	 * Constructor con todos los parametros
+	 * 
 	 * @param idaudicion
 	 * @param puntuacionmedia
 	 * @param lugar
@@ -46,38 +49,41 @@ public class Audicion {
 	 * @param categoria
 	 * @param convocatoria
 	 */
-	public Audicion(int idaudicion,float puntuacionmedia,String lugar,LocalDateTime fechahora,Candidatos aspirante,Tribunal[]jurado,Categoria idcategoria,Convocatoria idconvocatoria) {
-		this.idaudicion=idaudicion;
-		this.puntuacionmedia=puntuacionmedia;
-		this.lugar=lugar;
-		this.fechahora=fechahora;
-		this.aspirante=aspirante;
-		this.jurado=jurado;
-		this.categoria=idcategoria;
-		this.convocatoria=idconvocatoria;
+	public Audicion(int idaudicion, float puntuacionmedia, String lugar, LocalDateTime fechahora, Candidato aspirante,
+			Tribunal[] jurado, Categoria idcategoria, Convocatoria idconvocatoria) {
+		this.idaudicion = idaudicion;
+		this.puntuacionmedia = puntuacionmedia;
+		this.lugar = lugar;
+		this.fechahora = fechahora;
+		this.aspirante = aspirante;
+		this.jurado = jurado;
+		this.categoria = idcategoria;
+		this.convocatoria = idconvocatoria;
 	}
+
 	/**
 	 * Constructor copia para las Audiciones
+	 * 
 	 * @param prueba
 	 */
 	public Audicion(Audicion prueba) {
-		this.idaudicion=prueba.idaudicion;
-		this.puntuacionmedia=prueba.puntuacionmedia;
-		this.lugar=prueba.lugar;
-		this.fechahora=fechahora;
-		this.aspirante=prueba.aspirante;
-		int i=0;
-		for(Tribunal t:prueba.jurado) {
-			this.jurado[i]=new Tribunal(t);
+		this.idaudicion = prueba.idaudicion;
+		this.puntuacionmedia = prueba.puntuacionmedia;
+		this.lugar = prueba.lugar;
+		this.fechahora = fechahora;
+		this.aspirante = prueba.aspirante;
+		int i = 0;
+		for (Tribunal t : prueba.jurado) {
+			this.jurado[i] = new Tribunal(t);
 			i++;
 		}
-		this.jurado=prueba.jurado;
-		this.categoria=prueba.categoria;
-		this.convocatoria=prueba.convocatoria;
-		
+		this.jurado = prueba.jurado;
+		this.categoria = prueba.categoria;
+		this.convocatoria = prueba.convocatoria;
+
 	}
-	
-	//Metodos publicos
+
+	// Metodos publicos
 	public int getIdaudicion() {
 		return idaudicion;
 	}
@@ -102,11 +108,11 @@ public class Audicion {
 		this.lugar = lugar;
 	}
 
-	public Candidatos getAspirante() {
+	public Candidato getAspirante() {
 		return aspirante;
 	}
 
-	public void setAspirante(Candidatos aspirante) {
+	public void setAspirante(Candidato aspirante) {
 		this.aspirante = aspirante;
 	}
 
@@ -144,6 +150,7 @@ public class Audicion {
 
 	/**
 	 * Metodo para ver toda la información de la Audicion
+	 * 
 	 * @return toda la información de la Audición
 	 */
 	@Override
@@ -152,14 +159,5 @@ public class Audicion {
 				+ ", fechahora=" + fechahora + ", aspirante=" + aspirante + ", jurado=" + Arrays.toString(jurado)
 				+ ", categoria=" + categoria + ", convocatoria=" + convocatoria + "]";
 	}
-
-
-
-	
-	
-	
-	
-	
-	
 
 }

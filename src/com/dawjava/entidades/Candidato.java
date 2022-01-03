@@ -6,43 +6,44 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class Candidatos {
+public class Candidato {
 	static final DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
-
 	// Atributos
+
 	private int idcandidato;
 	private String nombre;
 	private String ciudad;
 	private Date fechainscripcion;
-	private boolean finalista=false;
-	
-	
+	private boolean finalista = false;
+	private Audicion prueba;
 
 	// Constructores
 	/**
 	 * Constructor por defecto
 	 */
-	public Candidatos() {	
-		
+
+	public Candidato() {
 	}
-	
+
 	/**
 	 * Constructor con 4 parametros
+	 * 
 	 * @param idcandidato
 	 * @param nombre
 	 * @param ciudad
 	 * @param fechainscripcion
 	 */
-	public Candidatos(int idcandidato,String nombre,String ciudad,Date fechainscripcion) {
-		this.idcandidato=idcandidato;
-		this.nombre=nombre;
-		this.ciudad=ciudad;
-		this.fechainscripcion=fechainscripcion;
+	public Candidato(int idcandidato, String nombre, String ciudad, Date fechainscripcion) {
+		this.idcandidato = idcandidato;
+		this.nombre = nombre;
+		this.ciudad = ciudad;
+		this.fechainscripcion = fechainscripcion;
 	}
 
 	/**
 	 * Constructor con todos los parametros
+	 * 
 	 * @param idcandidato
 	 * @param nombre
 	 * @param ciudad
@@ -50,42 +51,48 @@ public class Candidatos {
 	 * @param finalista
 	 *
 	 */
-	public Candidatos(int idcandidato,String nombre,String ciudad,Date fechainscripcion,boolean finalista) {
-		this.idcandidato=idcandidato;
-		this.nombre=nombre;
-		this.ciudad=ciudad;
-		this.fechainscripcion=fechainscripcion;
-		this.finalista=finalista;
-		
-		
+	public Candidato(int idcandidato, String nombre, String ciudad, Date fechainscripcion, boolean finalista,
+			Audicion prueba) {
+		this.idcandidato = idcandidato;
+		this.nombre = nombre;
+		this.ciudad = ciudad;
+		this.fechainscripcion = fechainscripcion;
+		this.finalista = finalista;
+		this.prueba = prueba;
+
 	}
+
 	/**
-	 * Constructor con un parametro de la propia clase Candidatos.LLamado constructor copia
+	 * Constructor con un parametro de la propia clase Candidato.LLamado constructor
+	 * copia
+	 * 
 	 * @param c
 	 */
-	public Candidatos(Candidatos c) {
-		this.idcandidato=c.idcandidato;
-		this.nombre=c.nombre;
-		this.ciudad=c.ciudad;
-		this.fechainscripcion=c.fechainscripcion;
-		this.finalista=c.finalista;
-		
-		
+	public Candidato(Candidato c) {
+		this.idcandidato = c.idcandidato;
+		this.nombre = c.nombre;
+		this.ciudad = c.ciudad;
+		this.fechainscripcion = c.fechainscripcion;
+		this.finalista = c.finalista;
+		this.prueba = c.prueba;
+
 	}
+
 	/**
 	 * Constructor con tres parametros
+	 * 
 	 * @param idcandidato
 	 * @param nombre
 	 * @param fechainscripcion
 	 */
 
-	public Candidatos(int idcandidato, String nombre,Date fechainscripcion) {
-		this.idcandidato=idcandidato;
-		this.nombre=nombre;
-		this.fechainscripcion=fechainscripcion;
+	public Candidato(int idcandidato, String nombre, Date fechainscripcion) {
+		this.idcandidato = idcandidato;
+		this.nombre = nombre;
+		this.fechainscripcion = fechainscripcion;
 	}
 
-	//Metodos publicos
+	// Metodos publicos
 	public int getIdcandidato() {
 		return idcandidato;
 	}
@@ -126,17 +133,27 @@ public class Candidatos {
 		this.finalista = finalista;
 	}
 
+	public Audicion getPrueba() {
+		return prueba;
+	}
 
+	public void setPrueba(Audicion prueba) {
+		this.prueba = prueba;
+	}
+
+	
 	/**
 	 * Metodo que retorna toda la información sobre los candidatos
+	 * 
 	 * @return la información sobre los candidatos
 	 */
 	@Override
 	public String toString() {
-		return "Candidatos [idcandidato=" + idcandidato + ", nombre=" + nombre + ", ciudad=" + ciudad
-				+ ", fechainscripcion=" + fechainscripcion + ", finalista=" + finalista + ", prueba=" +  "]";
+		return "Candidato [idcandidato=" + idcandidato + ", nombre=" + nombre + ", ciudad=" + ciudad
+				+ ", fechainscripcion=" + fechainscripcion + ", finalista=" + finalista + ", prueba=" + prueba + "]";
 	}
+
 	
 	
-	
+
 }
