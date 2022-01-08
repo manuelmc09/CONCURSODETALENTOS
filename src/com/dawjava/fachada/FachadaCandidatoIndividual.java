@@ -1,6 +1,8 @@
 package com.dawjava.fachada;
 
 import com.dawjava.dao.CandidatoDAO;
+import com.dawjava.dao.IndividualDAO;
+import com.dawjava.dao.PersonaDAO;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -26,47 +28,52 @@ public class FachadaCandidatoIndividual {
 	private PreparedStatement ps;
 	private ResultSet rs;
 
-	Individual solista = new Individual();
-	Candidato candidato=new Candidato();
-	Persona individuo = new Persona();
-	CandidatoDAO c;
+	boolean correcto = false;
 	Scanner teclado = new Scanner(System.in);
 
-	
-
 	public FachadaCandidatoIndividual(int opcion) {
+		System.out.println("\n-----------------------------------------");
+		System.out.println("\tCandidato Individual");
+		System.out.println("----------------------------------------\n");
+
 		System.out.println("A continuación introduzca los datos que se solicitan para REGISTRAR su INSCRIPCION ");
-		System.out.println("Introduzca su nombre artistico ");
-		candidato.setNombre(teclado.nextLine());
-		//c.filtrarporNombre(candidato.setNombre(teclado.nextLine()));
-		System.out.println("Introducir el nombre de su ciudad ");
-		candidato.setCiudad(teclado.nextLine());
+		CandidatoDAO cdao = new CandidatoDAO(conexion);
+		Candidato candidato = new Candidato();
+		candidato.nuevoCandidato();
+
+		/**
+		 * Introduce los campos del Candidato en la tabla candidato de la BD.Da error al
+		 * conectar con la BD. try { cdao.insertarCandidato(candidato); } catch
+		 * (SQLException e) { // TODO Auto-generated catch block e.printStackTrace(); }
+		 */
+
+		/**
+		 * Creamos un objecto CandidatoDAO para utilizar el metodo. El metodo
+		 * filtrarporNombre nos buscaria en la BD el nombre del Candidato introducido.
+		 * Si existe volveria informaria y se volveria a pedir al usuario por teclado .
+		 * do {
+		 * 
+		 * correcto = c.filtrarporNombre(teclado.nextLine()); if (!correcto) {
+		 * System.out. println("Error al introducir el nombre artistico. Este nombre ya
+		 * existe en la B.D." ); } } while (!correcto);
+		 */
+
 		System.out.println("\nLos siguientes datos personales son obligatorios para formalizar la inscripción.\n");
 		System.out.println(
 				"Sus datos serán tratados de tal manera que se garantice su seguridad y la confidencialidad de los mismos \n");
-		System.out.println("Introducir su nombre personal");
-		individuo.setNombre(teclado.nextLine());
-		System.out.println("Introducir su dni ");
-		individuo.setDni(teclado.nextLine());
-		System.out.println("Introducir su email ");
-		individuo.setEmail(teclado.nextLine());
-		System.out.println("Introducir un telefono de contacto (no obligatorio pero si recomendable)");
-		individuo.setTelefono(teclado.nextLine());
-		System.out.println("Introducir su edad (no obligatorio)");
-		solista.setEdad(teclado.nextInt());
+		Persona individuo = new Persona();
+		PersonaDAO pdao = new PersonaDAO(conexion);
+		individuo.nuevaPersona();
+		//pdao.insertarPersona(individuo);
+
+		Individual solista = new Individual();
+		IndividualDAO idao = new IndividualDAO(conexion);
+		solista.nuevoCandidatoIndividual();
+		//idao.insertarCandidatoIndividual(solista);
+
 		// cargar los datos introducidos en la BD
-		CandidatoDAO c=new CandidatoDAO(conexion);
-		try {
-			c.insertarCandidato(candidato);
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
+		// CandidatoDAO c1 = new CandidatoDAO(conexion);
 
 	}
-
-	
-
 
 }

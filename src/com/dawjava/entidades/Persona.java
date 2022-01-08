@@ -1,53 +1,57 @@
 package com.dawjava.entidades;
+
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Persona {
-	//Atributos
+	// Atributos
 	private int idpersona;
 	private String nombre;
 	private String email;
 	private String dni;
 	private String telefono;
-	
-	
-	//Constructores
+
+	// Constructores
 	/**
 	 * Constructor por defecto
 	 */
 	public Persona() {
-		
+
 	}
+
 	/**
 	 * Constructor copia con los parametros para crear un objeto Persona
+	 * 
 	 * @param p
 	 */
 	public Persona(Persona p) {
-		this.idpersona=p.idpersona;
-		this.nombre=p.nombre;
-		this.email=p.email;
-		this.dni=p.dni;
-		this.telefono=p.telefono;
+		this.idpersona = p.idpersona;
+		this.nombre = p.nombre;
+		this.email = p.email;
+		this.dni = p.dni;
+		this.telefono = p.telefono;
 	}
-	
+
 	/**
 	 * Constructor con todos los parametros
+	 * 
 	 * @param idpersona
 	 * @param nombre
 	 * @param email
 	 * @param dni
 	 * @param telefono
 	 */
-	public Persona(int idpersona,String nombre,String email,String dni,String telefono) {
-		this.idpersona=idpersona;
-		this.nombre=nombre;
-		this.email=email;
-		if(dni.length()>9)
+	public Persona(int idpersona, String nombre, String email, String dni, String telefono) {
+		this.idpersona = idpersona;
+		this.nombre = nombre;
+		this.email = email;
+		if (dni.length() > 9)
 			throw new IllegalArgumentException();
-		this.dni=dni;
-		this.telefono=telefono;
+		this.dni = dni;
+		this.telefono = telefono;
 	}
 
-	//Metodos publicos
+	// Metodos publicos
 	public int getIdpersona() {
 		return idpersona;
 	}
@@ -87,9 +91,12 @@ public class Persona {
 	public void setTelefono(String telefono) {
 		this.telefono = telefono;
 	}
+
 	/**
 	 * Metodo que devuelve toda la información de Persona
-	 * @return información sobre las personas que forman los candidatos(Individuales o Grupos)
+	 * 
+	 * @return información sobre las personas que forman los candidatos(Individuales
+	 *         o Grupos)
 	 */
 	@Override
 	public String toString() {
@@ -97,10 +104,25 @@ public class Persona {
 				+ ", telefono=" + telefono + "]";
 	}
 
-	
-	
-	
-	
+	/**
+	 * Metodo para crear un objeto Persona
+	 * 
+	 * @return
+	 */
+	public static Persona nuevaPersona() {
+		Scanner teclado = new Scanner(System.in);
+		Persona p = new Persona();
+		System.out.println("Introducir su nombre personal");
 
+		p.setNombre(teclado.nextLine());
+		System.out.println("Introducir su dni ");
+		p.setDni(teclado.nextLine());
+		System.out.println("Introducir su email ");
+		p.setEmail(teclado.nextLine());
+		System.out.println("Introducir un telefono de contacto (no obligatorio pero si recomendable)");
+		p.setTelefono(teclado.nextLine());
+		return p;
+
+	}
 
 }

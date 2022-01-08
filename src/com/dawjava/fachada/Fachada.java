@@ -8,6 +8,9 @@ import com.dawjava.entidades.*;
 
 public class Fachada {
 	Scanner teclado = new Scanner(System.in);
+	private static Fachada portal;
+	
+	
 
 	public Fachada() {
 
@@ -33,7 +36,7 @@ public class Fachada {
 		System.out.println("1. Gestionar Categorias ");
 		System.out.println("2. Gestionar Tribunales ");
 		System.out.println("3. Gestionar Convocatorias ");
-		System.out.println("4. Gestionar Audiciones ");		
+		System.out.println("4. Gestionar Audiciones ");
 		System.out.println("5. Salir ");
 	}
 
@@ -44,5 +47,4 @@ public class Fachada {
 		System.out.println("3. Salir ");
 	}
 
-	
 }

@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
+import java.util.Iterator;
 import java.util.Scanner;
 
 import com.dawjava.entidades.Tribunal;
@@ -33,10 +34,13 @@ public class FachadaTecnico {
 					}
 					switch (opcion) {
 					case 1:
+						System.out.println("Dar de alta a una nueva Categoria. ");
 						break;
 					case 2:
+						System.out.println("Modificar una Categoria. ");
 						break;
 					case 3:
+						System.out.println("Eliminar una Categoria. ");
 						break;
 					case 4:
 						System.out.println("Saliendo....");
@@ -69,28 +73,46 @@ public class FachadaTecnico {
 						teclado.nextLine();
 						System.out.println("A continuación introducir los datos del juez-a ");
 						char respuesta = 0;
+						boolean valido = false;
+
+						Tribunal t = null;
+						ArrayList<Tribunal> jueces = new ArrayList<Tribunal>();
+
 						do {
-							Tribunal t = new Tribunal();
-							System.out.println("Introducir su nombre ");
-							t.setNombre(teclado.nextLine());
-							System.out.println("Introducir su dni ");
-							t.setDni(teclado.nextLine());
-							System.out.println("Introducir su email ");
-							t.setEmail(teclado.nextLine());
-							System.out.println("Introducir su telefono ");
-							t.setTelefono(teclado.nextLine());
-							System.out.println("Desea seguir introduciendo datos de otros jueces-as ");
-							Utilidades.leerBoolean();
+							t.nuevoTribunal();
+							do {
+								try {
+									System.out.println(
+											"Desea seguir introduciendo datos de jueces. Pulse s para Sí o n para No");
+									respuesta = teclado.nextLine().charAt(0);
+
+								} catch (Exception e) {
+									System.out.println(
+											"La respuesta no es correcta. Debe introducir 's' para Si o 'n' para No .\nIntente de nuevo");
+									teclado.next().charAt(0);
+								}
+
+							} while (respuesta != 's' && respuesta != 'S' && respuesta != 'n' && respuesta != 'N');
+
 							// Añadir los datos de los jueces a la B.D. ó a un ArrayList<Tribunales>
 							// listajueces
-							ArrayList<Tribunal> jueces = new ArrayList<Tribunal>();
-							//jueces.add(t);
-						} while (respuesta == 's' && respuesta == 'S');
+							jueces.add(new Tribunal());
+							if (respuesta == 'n' || respuesta == 'N') {
+								System.out.println("Gracias...");
+								System.out.println("Número de elemento de la coleccion=" + jueces.size());
+								for (Tribunal tr : jueces)
+									System.out.println(" " + tr.getNombre() + " " + tr.getDni());
+
+							}
+
+						} while (respuesta == 's' || respuesta == 'S');
 
 						break;
 					case 2:
+						System.out.println("Modificamos los datos de un juez-a ");
 						break;
 					case 3:
+						System.out.println("Eliminamos los datos de un juez-a ");
 						break;
 					case 4:
 						/**
@@ -98,8 +120,13 @@ public class FachadaTecnico {
 						 * cada linea represente los datos del objeto mediante el separador '|' en este
 						 * orden idtribunal, nombre, email, DNI y tléfono
 						 */
-						TribunalDAO t = new TribunalDAO();
-						t.importarJuecesDesdeFicheroDeCaracteres("tribunales.txt");
+						TribunalDAO t1 = new TribunalDAO();
+						String ruta = Utilidades.leerNombredeFichero("ficherodeentrada");
+						// Podemos asignar una ruta concreta para evitar error al introducir los datos
+						// de la ruta del fichero
+						// String ruta =
+						// "C:\\Users\\usuario\\eclipse-workspaceDAW2.1\\CONCURSODETALENTOS\\src\\com\\dawjava\\resources\\listajueces.txt";
+						t1.importarJuecesDesdeFicheroDeCaracteres(ruta);
 						break;
 					case 5:
 						/**
@@ -107,23 +134,32 @@ public class FachadaTecnico {
 						 * acuerdo a los tipos de datos de cada tributo que se muestran en el diagrama
 						 * de clases
 						 */
+						TribunalDAO tdao1 = new TribunalDAO();
+						String path = Utilidades.leerNombredeFichero("ficherodeentrada");
+						// Podemos asignar una ruta concreta para evitar error al introducir los datos
+						// de la ruta del fichero
+						// String path =
+						// "C:\\Users\\usuario\\eclipse-workspaceDAW2.1\\CONCURSODETALENTOS\\src\\com\\dawjava\\resources\\listajueces.dat";
+						tdao1.importarTribunalesDesdeFicheroDeBytes(path);
 
 						break;
 					case 6:
 						/**
-						 * Exportar una colección de objetos de la entidad haciea un fichero de
+						 * Exportar una colección de objetos de la entidad hacia un fichero de
 						 * caracteres, en que cada linea será una cadena de texto formada por los
 						 * atriburos del objeto separados por el separador '|' y en el que el orden de
 						 * los campos es el marcado anteriormente
 						 */
-						TribunalDAO t1 = new TribunalDAO();
-						ArrayList<Tribunal> jueces = new ArrayList<Tribunal>();
-						t1.exportarDatosTribunal(jueces);
+						TribunalDAO t2 = new TribunalDAO();
+						// ArrayList<Tribunal> listadojueces = new ArrayList<Tribunal>();
+						t2.exportarDatosTribunalToFicheroCaracteres();
 						break;
 					case 7:
 						/**
 						 * Exportar los datos de un objeto de la clase Tribunal hacia un fichero binario
 						 */
+						TribunalDAO tdao = new TribunalDAO();
+						tdao.exportarTribunalToBinaryFile();
 						break;
 					case 8:
 						System.out.println("Saliendo....");
@@ -153,8 +189,10 @@ public class FachadaTecnico {
 					}
 					switch (opcion) {
 					case 1:
+						System.out.println("Establecemos el lugar, fecha y hora de la convocatoria ");
 						break;
 					case 2:
+						System.out.println("Establecer los jueces-zas para la convocatoria. ");
 						break;
 					case 3:
 						System.out.println("Saliendo....");
@@ -183,10 +221,13 @@ public class FachadaTecnico {
 					}
 					switch (opcion) {
 					case 1:
+						System.out.println("Establecemos el lugar, fecha y hora de las audiciones de cada convocatoria ");
 						break;
 					case 2:
+						System.out.println("Convocamos a los candidatos ");
 						break;
 					case 3:
+						System.out.println("Convocamos a los jueces ");
 						break;
 					case 4:
 						System.out.println("Saliendo....");

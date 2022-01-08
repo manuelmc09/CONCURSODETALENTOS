@@ -1,7 +1,9 @@
 package com.dawjava.entidades;
 
 import java.sql.Date;
+import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.Scanner;
 
 public class Individual extends Candidato {
 	static final DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
@@ -23,8 +25,8 @@ public class Individual extends Candidato {
 	 * @param idcantidato
 	 * @param edad
 	 */
-	public Individual(int idcandidato,String nombre,Date fechainscripcion,int edad) {
-		super(idcandidato,nombre,fechainscripcion);
+	public Individual(int idcandidato,String nombre,String ciudad,Date fechainscripcion,int edad) {
+		super(idcandidato,nombre,ciudad, fechainscripcion);
 		if(edad<0)
 			throw new IllegalArgumentException();
 		this.edad=edad;
@@ -53,6 +55,14 @@ public class Individual extends Candidato {
 	@Override
 	public String toString() {
 		return super.toString()+"Individual [edad=" + edad + "]";
+	}
+	
+	public static Individual nuevoCandidatoIndividual() {
+		Scanner teclado=new Scanner(System.in);
+		Individual solista=new Individual();
+		System.out.println("Introducir su edad (no obligatorio)");
+		solista.setEdad(teclado.nextInt());
+		return solista;
 	}
 
 }

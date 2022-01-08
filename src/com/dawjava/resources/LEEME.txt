@@ -1,0 +1,28 @@
+
+Los Ejercicios están resueltos en la medida de mis posibilidades. 
+Te comento algunas cuestiones me que han surgido, ademas te adjunto el archivo de la base de datos:
+- Ejercicio 1: Todas las entidades están en el paquete com.dawjava.entidades. En cada clase además de disponer del constructor por defecto, hay un constructor copia. 
+Además en esta cada clase he incluido un metodo para crear un nuevo objeto de esa clase, pidiendo los datos por teclado. Metodo que se usará cada vez que se pida estos 
+datos por las diferentes GUI, a los distintos usuarios/roles.
+
+- Ejercicio 2: La clase convocatoria, la repasamos en clase. Me queda la duda de que funcione correctamente la sobreescritura de .toString()
+
+- Ejercicio 3: La incripcion del concurso por parte de los candidatos. Muchos problemas en este ejercicio. Por un lado la Base de Datos, que repasamos en clase la última
+vez, no me terminaba de convencer, a la hora de introducir los datos. Sobre todo con la entidad GRUPO. Te paso un base de datos en MySQL, que aparte de un fallo que 
+está 'capado' para que funcione va bien. Otra de las cosas que no me funciona y que he tenido que 'capar' para que no saltese error es la conexion a la base de datos desde
+el programa java. Tanto a la hora de insertar los datos a las diferentes tablas. No he sabido resolver esta conexion para que funcionase. No se donde está el error.
+
+- Ejercicio 4: Validaciones. No funcionan todas, pero casi
+
+- Ejercicio 5: Metodos para importar y exportar datos. Estas opciones están en la GUI del Tecnico, ya que es el que puede acceder a el uso de estos datos. Los metodos 
+están en la clase "TribunalDAO" del paquete "com.dawjava.dao" que tambien he construido para cada una de las clases. 
+Los metodos son:  	* importarJuecesDesdeFicheroDeCaracteres(String path)
+			* importarTribunalesDesdeFicheroDeBytes(String path)
+			* exportarDatosTribunalToFicheroCaracteres()
+			* exportarTribunalToBinaryFile()
+En el ejercicio no especificabas si tenia que crear los ArrayList para gestionar estos archivos. He optado por la manera más fácil, que era crear objetos de la 
+clase Tribunal con los datos que se solicitaban y añadirlos a un ArrayList de objetos de esa clase.
+
+Los metodos para insertar, modificar y borrar  las diferentes entidades/tablas estan en el paquete "com.dawjava.dao" en sus respectivos 'entidadDAO'. 
+He intentado hacer la conexion para JDBC de diferentes maneras y no se sabido resolver
+			

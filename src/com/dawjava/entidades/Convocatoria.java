@@ -6,6 +6,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedHashMap;
+import java.util.Scanner;
 import java.util.Set;
 import java.util.Iterator;
 
@@ -191,7 +192,30 @@ public class Convocatoria implements Comparable<Convocatoria> {
 		for (int i = 0; i < jueces.length; i++) {
 			System.out.println(jueces[i].getNombre() + jueces[i].getDni());
 		}
-		return cadena+cadena2+cadena3;
+		return cadena + cadena2 + cadena3;
+	}
+
+	/**
+	 * Metodo para crear una nueva Convocatoria
+	 * 
+	 * @return
+	 */
+	public static Convocatoria nuevaConvocatoria() {
+		Scanner teclado = new Scanner(System.in);
+		Convocatoria c = new Convocatoria();
+		System.out.println("Introducir el lugar de la convocatoria: ");
+		c.setLugar(teclado.nextLine());
+		System.out.println("Introducir la fecha de la convocatoria (dd/mm/aaa). \nPulse intro para la fecha de hoy: ");
+		Date fecha;
+		String fechaconvocatoria = teclado.nextLine();
+		if (fechaconvocatoria.isEmpty()) {
+			fecha = java.sql.Date.valueOf(LocalDate.now());
+		} else {
+			fecha = java.sql.Date.valueOf(LocalDate.parse(fechaconvocatoria, dateFormatter));
+		}
+
+		c.setFecha(fecha);
+		return c;
 	}
 
 }

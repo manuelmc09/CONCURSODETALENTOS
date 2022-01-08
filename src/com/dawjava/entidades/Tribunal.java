@@ -1,8 +1,10 @@
 package com.dawjava.entidades;
 
+import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Scanner;
 
-public class Tribunal {
+public class Tribunal implements Serializable{
 	// Atributos
 	private int idtribunal;
 	private String nombre;
@@ -17,6 +19,23 @@ public class Tribunal {
 	 */
 	public Tribunal() {
 
+	}
+
+	/**
+	 * Constructor con 5 parametros
+	 * 
+	 * @param idtribunal
+	 * @param nombre
+	 * @param email
+	 * @param dni
+	 * @param telefono
+	 */
+	public Tribunal(int idtribunal, String nombre, String email, String dni, String telefono) {
+		this.idtribunal = idtribunal;
+		this.nombre = nombre;
+		this.email = email;
+		this.dni = dni;
+		this.telefono = telefono;
 	}
 
 	/**
@@ -116,8 +135,12 @@ public class Tribunal {
 	 */
 	@Override
 	public String toString() {
-		return "Tribunal [idtribunal=" + idtribunal + ", nombre=" + nombre + ", email=" + email + ", dni=" + dni
-				+ ", telefono=" + telefono + ", castings=" + castings + "]";
+		return "\nTribunal =>\n"+
+				"idtribunal: \t" + idtribunal + 
+				"\nnombre: \t" + nombre + 
+				"\nemail: \t\t" + email + 
+				"\ndni: \t\t" + dni+ 
+				"\ntelefono: \t" + telefono ;
 	}
 
 	/**
@@ -130,5 +153,19 @@ public class Tribunal {
 		String ret;
 		ret = this.idtribunal + "|" + this.nombre + "|" + this.email + "|" + this.dni + "|" + this.telefono;
 		return ret;
+	}
+
+	public static Tribunal nuevoTribunal() {
+		Scanner teclado = new Scanner(System.in);
+		Tribunal t = new Tribunal();
+		System.out.println("Introducir su nombre ");
+		t.setNombre(teclado.nextLine());
+		System.out.println("Introducir su dni ");
+		t.setDni(teclado.nextLine());
+		System.out.println("Introducir su email ");
+		t.setEmail(teclado.nextLine());
+		System.out.println("Introducir su telefono ");
+		t.setTelefono(teclado.nextLine());
+		return t;
 	}
 }

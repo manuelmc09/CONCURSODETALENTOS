@@ -67,7 +67,7 @@ public class FachadaCandidatoGrupo {
 			}
 		}
 		
-		System.out.println("Indicar a continuación cual de los componentes del grupo/banda será el portavoz. Introducir su DNI personal para asignarle un identifidor como portavoz ");
+		System.out.println("Indicar a continuación cual de los componentes del grupo/banda será el portavoz. \nIntroducir su DNI personal para asignarle un identifidor como portavoz ");
 		miembro.setDni(teclado.nextLine());
 		
 

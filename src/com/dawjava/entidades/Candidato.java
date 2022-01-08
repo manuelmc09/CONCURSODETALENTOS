@@ -5,6 +5,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class Candidato {
 	static final DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
@@ -15,8 +16,8 @@ public class Candidato {
 	private String nombre;
 	private String ciudad;
 	private Date fechainscripcion;
-	private boolean finalista = false;
-	private Audicion prueba;
+	protected boolean finalista = false;
+	protected Audicion prueba;
 
 	// Constructores
 	/**
@@ -83,13 +84,15 @@ public class Candidato {
 	 * 
 	 * @param idcandidato
 	 * @param nombre
-	 * @param fechainscripcion
+	 * @param date
 	 */
 
-	public Candidato(int idcandidato, String nombre, Date fechainscripcion) {
+	public Candidato(int idcandidato, String nombre,String ciudad, Date fechainscripcion,boolean finalista) {
 		this.idcandidato = idcandidato;
 		this.nombre = nombre;
+		this.ciudad=ciudad;
 		this.fechainscripcion = fechainscripcion;
+		this.finalista=finalista;
 	}
 
 	// Metodos publicos
@@ -153,7 +156,21 @@ public class Candidato {
 				+ ", fechainscripcion=" + fechainscripcion + ", finalista=" + finalista + ", prueba=" + prueba + "]";
 	}
 
-	
+
+	/**
+	 * Metodo que crea un nuevo Candidato
+	 * 
+	 * @return Candidato c
+	 */
+	public static Candidato nuevoCandidato() {
+		Scanner teclado=new Scanner(System.in);
+		Candidato candidato = new Candidato();
+		System.out.println("Introduzca su nombre artistico ");
+		candidato.setNombre(teclado.nextLine());
+		System.out.println("Introducir el nombre de su ciudad ");
+		candidato.setCiudad(teclado.nextLine());	
+		return candidato;
+	}
 	
 
 }

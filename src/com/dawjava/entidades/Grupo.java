@@ -1,6 +1,7 @@
 package com.dawjava.entidades;
 
 import java.sql.Date;
+import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
@@ -27,8 +28,8 @@ public class Grupo extends Candidato {
 	 * @param fechainscripcion
 	 * @param componentes
 	 */
-	public Grupo(int idcandidato,String nombre,Date fechainscripcion,int idportavoz,Persona portavoz,ArrayList<Persona> componentes) {
-		super(idcandidato,nombre,fechainscripcion);
+	public Grupo(int idcandidato,String nombre,String ciudad,Date fechainscripcion,int idportavoz,Persona portavoz,ArrayList<Persona> componentes) {
+		super(idcandidato,nombre,ciudad,fechainscripcion);
 		this.idportavoz=idportavoz;
 		this.componentes=new ArrayList<Persona>();
 		

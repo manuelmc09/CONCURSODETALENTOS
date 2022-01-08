@@ -4,6 +4,7 @@ import java.sql.*;
 import java.util.Scanner;
 
 import com.dawjava.entidades.Categoria;
+import com.dawjava.util.ConexionBD;
 
 public class CategoriaDAO {
 	private Connection conexion;
@@ -11,7 +12,10 @@ public class CategoriaDAO {
 	ResultSet resultado;
 
 	public CategoriaDAO(Connection conexion) {
-		this.conexion = conexion;
+		conexion = ConexionBD.establecerConexion();
+		if (conexion == null) {
+			System.out.println("Error al conectar a la BD ");
+		}
 	}
 
 	public Connection getConexion() {
@@ -65,6 +69,7 @@ public class CategoriaDAO {
 
 	/**
 	 * Método para buscar por nombre de categoria en la BD
+	 * 
 	 * @param categoria_buscar
 	 * @return Categoria cat
 	 */
@@ -74,10 +79,10 @@ public class CategoriaDAO {
 		try {
 			ps = conexion.prepareStatement("SELECT categoria FROM categoria WHERE categoria=?");
 			ps.setString(1, categoria_buscar);
-			//ejecutamos la sentecia
+			// ejecutamos la sentecia
 			resultado = ps.executeQuery();
 			resultado.next();
-			cat=new Categoria(resultado.getInt(1),resultado.getString(2));
+			cat = new Categoria(resultado.getInt(1), resultado.getString(2));
 			ps.close();
 
 		} catch (SQLException e) {
@@ -87,15 +92,22 @@ public class CategoriaDAO {
 	}
 
 	/**
-	 * (Sin terminar)
+	 * 
+	 * 
 	 * @param nombre_categoria
 	 * @return
 	 */
-	public boolean modificarCategoria(String nombre_categoria) {
+	public boolean modificarCategoria(Categoria c) {
 		Scanner teclado = new Scanner(System.in);
 		try {
-			Statement stmt = conexion.createStatement();
-
+			String sql = "UPDATE categoria SET nombre=? WHERE idcategoria=?";
+			ps = conexion.prepareStatement(sql);
+			ps.setString(1, c.getCategoria());
+			ps.setInt(2, c.getIdcategoria());
+			// ejecutamos la sentencia
+			ps.executeUpdate();
+			System.out.println("Se ha actualizado correctamente ");
+			ps.close();
 		} catch (SQLException e) {
 			System.out.println("Error al modificar ..." + e.getMessage());
 		}

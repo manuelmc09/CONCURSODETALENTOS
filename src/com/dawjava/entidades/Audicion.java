@@ -1,15 +1,22 @@
 package com.dawjava.entidades;
 
+import java.sql.Date;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Scanner;
+
+import com.dawjava.entidades.Categoria;
 
 public class Audicion {
+	static final DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 	// Atributos
 	private int idaudicion;
 	private float puntuacionmedia = 0.0F;
 	private String lugar;
-	private java.time.LocalDateTime fechahora;
+	private static java.time.LocalDateTime fechahora;
 	// java.sql.Date ff=Date.valueOf(fechahora.toString());
 	private Candidato aspirante;
 	private Tribunal[] jurado = new Tribunal[3];
@@ -160,4 +167,27 @@ public class Audicion {
 				+ ", categoria=" + categoria + ", convocatoria=" + convocatoria + "]";
 	}
 
+	public static Audicion nuevaAudicion() {
+		Audicion a = new Audicion();
+		Scanner teclado = new Scanner(System.in);
+
+		System.out.println("Introduzca lugar de la audicion: ");
+		a.setLugar(teclado.nextLine());
+		System.out.println("Introduzca fecha y hora de la audicion (dd/mm/aaaa).\n Pulse intro para la fecha de hoy: ");
+		String fecha = teclado.nextLine();
+		//Date fechahora;
+		if (fecha.isEmpty())
+			fechahora = LocalDateTime.now();
+		else
+			fechahora = LocalDateTime.parse(fecha, dateFormatter);
+		a.setFechahora(fechahora);
+		
+		System.out.println("Indicar a que categoria pertenece la audicion: ");
+		Categoria cat=new Categoria();
+		String category=teclado.nextLine();
+		cat.setCategoria(category);
+		//Sin terminar....
+		return null;
+
+	}
 }

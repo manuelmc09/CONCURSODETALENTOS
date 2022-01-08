@@ -2,6 +2,7 @@ package com.dawjava.entidades;
 
 import java.sql.Date;
 import java.time.format.DateTimeFormatter;
+import java.util.Scanner;
 
 public class Categoria {
 	static final DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
@@ -21,10 +22,6 @@ public class Categoria {
 	/**
 	 * Constructor con parametros
 	 * 
-<<<<<<< HEAD
-=======
-	 * @param cat
->>>>>>> 4900dbb4f988277b9adb7f91c24ffb0c9a3fde66
 	 * @param idCategoria
 	 * @param categoria
 	 */
@@ -60,6 +57,20 @@ public class Categoria {
 	@Override
 	public String toString() {
 		return "Categoria [idcategoria=" + idcategoria + ", categoria=" + categoria + "]";
+	}
+
+	/**
+	 * Metodo para crear una nueva Categoria
+	 * 
+	 * @return
+	 */
+	public static Categoria nuevaCategoria() {
+		Scanner teclado = new Scanner(System.in);
+		Categoria c = new Categoria();
+
+		System.out.println("Introduzca el nombre de la nueva categoria: ");
+		c.setCategoria(teclado.nextLine());
+		return c;
 	}
 
 }

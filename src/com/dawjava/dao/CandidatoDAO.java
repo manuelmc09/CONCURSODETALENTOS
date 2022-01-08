@@ -1,18 +1,25 @@
 package com.dawjava.dao;
 
 import com.dawjava.entidades.Candidato;
+import com.dawjava.util.ConexionBD;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.Scanner;
-import java.sql.SQLException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class CandidatoDAO {
 
 	private Connection conexion;
+	private PreparedStatement ps;
+	private ResultSet resultado;
 
 	public CandidatoDAO(Connection conexion) {
-		this.conexion = conexion;
+		conexion = ConexionBD.establecerConexion();
+		if (conexion == null) {
+			System.out.println("Error al conectar a la BD ");
+		}
 	}
 
 	public Connection getConexion() {
@@ -23,33 +30,43 @@ public class CandidatoDAO {
 	 * Metodo para insertar un nuevo Candidato
 	 * 
 	 * @param c
-	 * @return
+	 * @return true
 	 * @throws SQLException
 	 */
 	public boolean insertarCandidato(Candidato c) throws SQLException {
-		Statement stmt = conexion.createStatement();
-		String sql = "INSERT INTO candidatos VALUES(" + c.getNombre() + ", " + c.getCiudad();
-		stmt.execute(sql);
+		String sql = "INSERT INTO candidatos(nombre,ciudad,fechainscripcion,finalista) VALUES(?,?,?,?)";
+		ps = conexion.prepareStatement(sql);
+		ps.setString(1, c.getNombre());
+		ps.setString(2, c.getCiudad());
+		ps.setDate(3, c.getFechainscripcion());
+		ps.setBoolean(4, false);
+
+		ps.executeUpdate(sql);
+		System.out.println("Inserccion correcta");
 		return true;
 	}
 
 	/**
 	 * Metodo para filtrar por Nombre (sin terminar)
-	 * @param nombre_buscar
-	 * @return
+	 * 
+	 * @param nombre
+	 * @return true
 	 */
-	public boolean filtrarporNombre(String nombre_buscar) {
-		Candidato c;
-		try {
-			Statement stmt = conexion.createStatement();
-			String sql = "SELECT nombre FROM candidatos WHERE nombre='" + nombre_buscar + "'";
-			ResultSet resultado = stmt.executeQuery(sql);
-			resultado.next();
-			c = new Candidato(resultado.getByte(1), resultado.getString(2), resultado.getString(3),
-					resultado.getDate(3));
-			stmt.close();
-		} catch (SQLException e) {
+	public boolean filtrarporNombre(String nombre) {
+		Candidato ret = null;
 
+		try {
+			String sql = "SELECT nombre FROM candidatos WHERE nombre=?";
+			ps = conexion.prepareStatement(sql);
+			ps.setString(1, nombre);
+			resultado = ps.executeQuery();
+			if (resultado.next()) {
+				ret = new Candidato(resultado.getInt(1), resultado.getString(2), resultado.getString(3),
+						resultado.getDate(4), resultado.getBoolean(5));
+			}
+
+		} catch (SQLException e) {
+			System.out.println("error al consultar por nombre " + e.getMessage());
 		}
 		return true;
 	}
