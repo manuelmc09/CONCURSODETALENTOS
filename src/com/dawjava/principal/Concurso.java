@@ -48,9 +48,16 @@ public class Concurso {
 
 							//Aquí ya se tienen las opciones del menu para Candidatos individuales y grupos
 							if(subopcion==1) {
+								Individual nuevo = Individual.nuevoCandidatoIndividual();
+//								
+								
 								FachadaCandidatoIndividual portalindividual=new FachadaCandidatoIndividual(subopcion);
 							}else if(subopcion==2) {
-								FachadaCandidatoGrupo portalgrupo=new FachadaCandidatoGrupo(subopcion);
+								
+								Grupo nuevo = Grupo.nuevoCandidatoGrupo();
+								
+								
+//								FachadaCandidatoGrupo portalgrupo=new FachadaCandidatoGrupo(subopcion);
 							}
 
 

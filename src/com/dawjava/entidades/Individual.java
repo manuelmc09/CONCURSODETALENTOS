@@ -1,6 +1,5 @@
 package com.dawjava.entidades;
 
-import java.sql.Date;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
@@ -25,7 +24,7 @@ public class Individual extends Candidato {
 	 * @param idcantidato
 	 * @param edad
 	 */
-	public Individual(int idcandidato,String nombre,String ciudad,Date fechainscripcion,int edad) {
+	public Individual(int idcandidato,String nombre,String ciudad,LocalDate fechainscripcion,int edad) {
 		super(idcandidato,nombre,ciudad, fechainscripcion);
 		if(edad<0)
 			throw new IllegalArgumentException();
@@ -36,10 +35,10 @@ public class Individual extends Candidato {
 	 * @param solista
 	 * @param edad
 	 */
-	public Individual(Candidato solista,int edad) {
+	public Individual(Individual solista) {
 		super(solista);
-		this.edad=edad;
-		 
+		this.edad=solista.edad;
+		this.persona = solista.persona;
 	}
 	//Metodos publicos
 	public int getEdad() {
@@ -47,6 +46,15 @@ public class Individual extends Candidato {
 	}
 	public void setEdad(int edad) {
 		this.edad = edad;
+	}
+	
+	
+	
+	public Persona getPersona() {
+		return persona;
+	}
+	public void setPersona(Persona persona) {
+		this.persona = persona;
 	}
 	/**
 	 * Metodo que nos devuelve toda la informacion del candidato Individual
@@ -59,9 +67,14 @@ public class Individual extends Candidato {
 	
 	public static Individual nuevoCandidatoIndividual() {
 		Scanner teclado=new Scanner(System.in);
-		Individual solista=new Individual();
+		Individual solista= (Individual)Candidato.nuevoCandidato();
+		
+		solista.setPersona(Persona.nuevaPersona());
+		
 		System.out.println("Introducir su edad (no obligatorio)");
 		solista.setEdad(teclado.nextInt());
+		
+		
 		return solista;
 	}
 

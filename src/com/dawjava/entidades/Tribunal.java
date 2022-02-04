@@ -5,10 +5,11 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Tribunal implements Serializable{
+
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 5988870668047445534L;
+	private static final long serialVersionUID = 1L;
 	// Atributos
 	private int idtribunal;
 	private String nombre;

@@ -69,9 +69,10 @@ public class TribunalDAO {
 	 * @param path
 	 * @return
 	 */
-	public static void importarJuecesDesdeFicheroDeCaracteres(String path) {
+	public static ArrayList<Tribunal> importarJuecesDesdeFicheroDeCaracteres(String path) {
 		ArrayList<Tribunal> t = new ArrayList<Tribunal>();
-		//path = "C:\\Users\\usuario\\eclipse-workspaceDAW2.1\\CONCURSODETALENTOS\\src\\com\\dawjava\\resources\\listajueces.txt";
+		// path =
+		// "C:\\Users\\usuario\\eclipse-workspaceDAW2.1\\CONCURSODETALENTOS\\src\\com\\dawjava\\resources\\listajueces.txt";
 		File fis = new File(path);
 		FileReader fr = null;
 		BufferedReader buffer = null;
@@ -88,7 +89,7 @@ public class TribunalDAO {
 					String dni = column[3];
 					String telefono = column[4];
 					Tribunal tr = new Tribunal(idtribunal, nombre, email, dni, telefono);
-					//System.out.println(tr.data());
+					// System.out.println(tr.data());
 					t.add(tr);
 				}
 			} finally {
@@ -106,12 +107,13 @@ public class TribunalDAO {
 		} catch (Exception e) {
 			System.out.println("Se ha producido una Exception" + e.getMessage());
 		}
-		
-			System.out.println("\nEstos son los datos leidos de los "+t.size()+"  jueces-as.\n");
-			for(int i=0;i<t.size();i++) {
-				System.out.print(t.get(i)+" ");
-			}
-			///Podria devolverse el arrayList t
+
+		System.out.println("\nEstos son los datos leidos de los " + t.size() + "  jueces-as.\n");
+		for (int i = 0; i < t.size(); i++) {
+			System.out.print(t.get(i) + " ");
+		}
+		/// Podria devolverse el arrayList t
+		return t;
 	}
 
 	/**
@@ -120,13 +122,14 @@ public class TribunalDAO {
 	 * @param path
 	 * @throws IOException
 	 */
-	public static void importarTribunalesDesdeFicheroDeBytes(String path) {
+	public static ArrayList<Tribunal> importarTribunalesDesdeFicheroDeBytes(String path) {
 		Tribunal t = new Tribunal();
 		ArrayList<Tribunal> jueces = new ArrayList<Tribunal>();
 		FileInputStream fis = null;
 		ObjectInputStream ois = null;
 		boolean lectura = true;
-		//path = "C:\\Users\\usuario\\eclipse-workspaceDAW2.1\\CONCURSODETALENTOS\\src\\com\\dawjava\\resources\\listajueces.dat";
+		// path =
+		// "C:\\Users\\usuario\\eclipse-workspaceDAW2.1\\CONCURSODETALENTOS\\src\\com\\dawjava\\resources\\listajueces.dat";
 		try {
 			try {
 				// Asociamos el nombre interno del fichero con el externo
@@ -159,7 +162,8 @@ public class TribunalDAO {
 		for (int i = 0; i < jueces.size(); i++) {
 			System.out.println(jueces.get(i).toString());
 		}
-		///Podria devolverse el arrayList t
+		/// Podria devolverse el arrayList t
+		return jueces;
 	}
 
 	/**
@@ -188,9 +192,12 @@ public class TribunalDAO {
 				fw = new FileWriter(fis, true);
 				buffer = new PrintWriter(fw);
 				for (Tribunal t : jueces) {
-					///NO Sigue el orden marcado por Tribunal.data(). Además se está repitiendo el DNI!!!!
-					buffer.print(t.getNombre() + "|" + t.getDni() + "|" + t.getEmail() + "|" + t.getDni() + "|"
-							+ t.getTelefono() + "|" + "\n");
+					/// NO Sigue el orden marcado por Tribunal.data(). Además se está repitiendo el
+					/// DNI!!!!
+					buffer.println(t.data());
+//					
+//					buffer.print(t.getNombre() + "|" + t.getDni() + "|" + t.getEmail() + "|" + t.getDni() + "|"
+//							+ t.getTelefono() + "|" + "\n");
 				}
 			} finally {
 				if (buffer != null) {

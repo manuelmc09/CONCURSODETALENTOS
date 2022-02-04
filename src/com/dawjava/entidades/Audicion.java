@@ -9,6 +9,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 import com.dawjava.entidades.Categoria;
+import com.dawjava.util.Utilidades;
 
 public class Audicion {
 	static final DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
@@ -77,7 +78,7 @@ public class Audicion {
 		this.idaudicion = prueba.idaudicion;
 		this.puntuacionmedia = prueba.puntuacionmedia;
 		this.lugar = prueba.lugar;
-		this.fechahora = fechahora;
+		this.fechahora = prueba.fechahora;
 		this.aspirante = prueba.aspirante;
 		int i = 0;
 		for (Tribunal t : prueba.jurado) {
@@ -174,20 +175,12 @@ public class Audicion {
 		System.out.println("Introduzca lugar de la audicion: ");
 		a.setLugar(teclado.nextLine());
 		System.out.println("Introduzca fecha y hora de la audicion (dd/mm/aaaa).\n Pulse intro para la fecha de hoy: ");
-		String fecha = teclado.nextLine();
-		// Date fechahora;
-		try {
-			if (fecha.isEmpty())
-				a.fechahora = LocalDateTime.now();
-
-			else
-				a.fechahora = LocalDateTime.parse(fecha, dateFormatter);
-		} catch (Exception e) {
-			// TODO Bloque catch generado automáticamente
-			e.printStackTrace();
-		}
+		a.setFechahora(Utilidades.leerFechaHora());
+		
 		System.out.println("Indicar a que categoria pertenece la audicion: ");
 		Categoria cat = new Categoria();
+		
+		
 		String category = teclado.nextLine();
 		cat.setCategoria(category);
 		// Sin terminar....

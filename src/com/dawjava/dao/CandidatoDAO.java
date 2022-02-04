@@ -7,6 +7,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class CandidatoDAO {
@@ -38,7 +39,12 @@ public class CandidatoDAO {
 		ps = conexion.prepareStatement(sql);
 		ps.setString(1, c.getNombre());
 		ps.setString(2, c.getCiudad());
-		ps.setDate(3, c.getFechainscripcion());
+		java.sql.Date fechasql = Date.valueOf(LocalDate.now());
+		fechasql.setDate(c.getFechainscripcion().getDayOfMonth());
+		fechasql.setMonth(c.getFechainscripcion().getMonthValue());
+		fechasql.setYear(c.getFechainscripcion().getYear());
+		
+		ps.setDate(3, fechasql);
 		ps.setBoolean(4, false);
 
 		ps.executeUpdate(sql);
@@ -56,13 +62,16 @@ public class CandidatoDAO {
 		Candidato ret = null;
 
 		try {
-			String sql = "SELECT nombre FROM candidatos WHERE nombre=?";
+			String sql = "SELECT * FROM candidatos WHERE nombre=?";
 			ps = conexion.prepareStatement(sql);
 			ps.setString(1, nombre);
 			resultado = ps.executeQuery();
 			if (resultado.next()) {
-				ret = new Candidato(resultado.getInt(1), resultado.getString(2), resultado.getString(3),
-						resultado.getDate(4), resultado.getBoolean(5));
+				java.sql.Date fecha = resultado.getDate(4);
+				java.time.LocalDate fechaformat = LocalDate.parse(fecha.toLocaleString());
+
+				ret = new Candidato(resultado.getInt(1), resultado.getString(2), resultado.getString(3), fechaformat,
+						resultado.getBoolean(5));
 			}
 
 		} catch (SQLException e) {

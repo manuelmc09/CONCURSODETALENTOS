@@ -7,15 +7,17 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
+import com.dawjava.util.Utilidades;
+
 public class Candidato {
 	static final DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
 	// Atributos
 
-	private int idcandidato;
-	private String nombre;
-	private String ciudad;
-	private Date fechainscripcion;
+	protected int idcandidato;
+	protected String nombre;
+	protected String ciudad;
+	protected java.time.LocalDate fechainscripcion;
 	protected boolean finalista = false;
 	protected Audicion prueba;
 
@@ -35,7 +37,7 @@ public class Candidato {
 	 * @param ciudad
 	 * @param fechainscripcion
 	 */
-	public Candidato(int idcandidato, String nombre, String ciudad, Date fechainscripcion) {
+	public Candidato(int idcandidato, String nombre, String ciudad, LocalDate fechainscripcion) {
 		this.idcandidato = idcandidato;
 		this.nombre = nombre;
 		this.ciudad = ciudad;
@@ -52,8 +54,8 @@ public class Candidato {
 	 * @param finalista
 	 *
 	 */
-	public Candidato(int idcandidato, String nombre, String ciudad, Date fechainscripcion, boolean finalista,
-			Audicion prueba) {
+	public Candidato(int idcandidato, String nombre, String ciudad, java.time.LocalDate fechainscripcion,
+			boolean finalista, Audicion prueba) {
 		this.idcandidato = idcandidato;
 		this.nombre = nombre;
 		this.ciudad = ciudad;
@@ -61,6 +63,15 @@ public class Candidato {
 		this.finalista = finalista;
 		this.prueba = prueba;
 
+	}
+
+	public Candidato(int idcandidato, String nombre, String ciudad, java.time.LocalDate fechainscripcion,
+			boolean finalista) {
+		this.idcandidato = idcandidato;
+		this.nombre = nombre;
+		this.ciudad = ciudad;
+		this.fechainscripcion = fechainscripcion;
+		this.finalista = finalista;
 	}
 
 	/**
@@ -76,24 +87,9 @@ public class Candidato {
 		this.fechainscripcion = c.fechainscripcion;
 		this.finalista = c.finalista;
 		this.prueba = c.prueba;
-
 	}
 
-	/**
-	 * Constructor con tres parametros
-	 * 
-	 * @param idcandidato
-	 * @param nombre
-	 * @param date
-	 */
 
-	public Candidato(int idcandidato, String nombre,String ciudad, Date fechainscripcion,boolean finalista) {
-		this.idcandidato = idcandidato;
-		this.nombre = nombre;
-		this.ciudad=ciudad;
-		this.fechainscripcion = fechainscripcion;
-		this.finalista=finalista;
-	}
 
 	// Metodos publicos
 	public int getIdcandidato() {
@@ -120,11 +116,11 @@ public class Candidato {
 		this.ciudad = ciudad;
 	}
 
-	public Date getFechainscripcion() {
+	public java.time.LocalDate getFechainscripcion() {
 		return fechainscripcion;
 	}
 
-	public void setFechainscripcion(Date fechainscripcion) {
+	public void setFechainscripcion(java.time.LocalDate fechainscripcion) {
 		this.fechainscripcion = fechainscripcion;
 	}
 
@@ -144,7 +140,6 @@ public class Candidato {
 		this.prueba = prueba;
 	}
 
-	
 	/**
 	 * Metodo que retorna toda la información sobre los candidatos
 	 * 
@@ -156,21 +151,21 @@ public class Candidato {
 				+ ", fechainscripcion=" + fechainscripcion + ", finalista=" + finalista + ", prueba=" + prueba + "]";
 	}
 
-
 	/**
 	 * Metodo que crea un nuevo Candidato
 	 * 
 	 * @return Candidato c
 	 */
 	public static Candidato nuevoCandidato() {
-		Scanner teclado=new Scanner(System.in);
+		Scanner teclado = new Scanner(System.in);
 		Candidato candidato = new Candidato();
 		System.out.println("Introduzca su nombre artistico ");
 		candidato.setNombre(teclado.nextLine());
 		System.out.println("Introducir el nombre de su ciudad ");
-		candidato.setCiudad(teclado.nextLine());	
+		candidato.setCiudad(teclado.nextLine());
+		candidato.setFechainscripcion(Utilidades.leerFecha());
+
 		return candidato;
 	}
-	
 
 }

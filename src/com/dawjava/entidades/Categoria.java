@@ -1,11 +1,8 @@
 package com.dawjava.entidades;
 
-import java.sql.Date;
-import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 public class Categoria {
-	static final DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 	// Atributos
 
 	private int idcategoria;
