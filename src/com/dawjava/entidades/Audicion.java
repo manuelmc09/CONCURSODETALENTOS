@@ -16,7 +16,7 @@ public class Audicion {
 	private int idaudicion;
 	private float puntuacionmedia = 0.0F;
 	private String lugar;
-	private static java.time.LocalDateTime fechahora;
+	private java.time.LocalDateTime fechahora; /// NO puede ser static
 	// java.sql.Date ff=Date.valueOf(fechahora.toString());
 	private Candidato aspirante;
 	private Tribunal[] jurado = new Tribunal[3];
@@ -175,18 +175,22 @@ public class Audicion {
 		a.setLugar(teclado.nextLine());
 		System.out.println("Introduzca fecha y hora de la audicion (dd/mm/aaaa).\n Pulse intro para la fecha de hoy: ");
 		String fecha = teclado.nextLine();
-		//Date fechahora;
-		if (fecha.isEmpty())
-			fechahora = LocalDateTime.now();
-		else
-			fechahora = LocalDateTime.parse(fecha, dateFormatter);
-		a.setFechahora(fechahora);
-		
+		// Date fechahora;
+		try {
+			if (fecha.isEmpty())
+				a.fechahora = LocalDateTime.now();
+
+			else
+				a.fechahora = LocalDateTime.parse(fecha, dateFormatter);
+		} catch (Exception e) {
+			// TODO Bloque catch generado automáticamente
+			e.printStackTrace();
+		}
 		System.out.println("Indicar a que categoria pertenece la audicion: ");
-		Categoria cat=new Categoria();
-		String category=teclado.nextLine();
+		Categoria cat = new Categoria();
+		String category = teclado.nextLine();
 		cat.setCategoria(category);
-		//Sin terminar....
+		// Sin terminar....
 		return null;
 
 	}

@@ -7,6 +7,8 @@ public class Puntuacion {
 	private int idpuntuacion;
 	private int puntuacion = 0;
 	private boolean especial = false;
+	
+	///¿Para qué este diccionario?
 	private LinkedHashMap<Audicion, Integer> puntuaciones = new LinkedHashMap<Audicion, Integer>();
 
 	/**

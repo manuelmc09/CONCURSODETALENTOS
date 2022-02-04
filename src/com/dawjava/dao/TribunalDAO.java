@@ -111,6 +111,7 @@ public class TribunalDAO {
 			for(int i=0;i<t.size();i++) {
 				System.out.print(t.get(i)+" ");
 			}
+			///Podria devolverse el arrayList t
 	}
 
 	/**
@@ -158,7 +159,7 @@ public class TribunalDAO {
 		for (int i = 0; i < jueces.size(); i++) {
 			System.out.println(jueces.get(i).toString());
 		}
-
+		///Podria devolverse el arrayList t
 	}
 
 	/**
@@ -187,6 +188,7 @@ public class TribunalDAO {
 				fw = new FileWriter(fis, true);
 				buffer = new PrintWriter(fw);
 				for (Tribunal t : jueces) {
+					///NO Sigue el orden marcado por Tribunal.data(). Además se está repitiendo el DNI!!!!
 					buffer.print(t.getNombre() + "|" + t.getDni() + "|" + t.getEmail() + "|" + t.getDni() + "|"
 							+ t.getTelefono() + "|" + "\n");
 				}

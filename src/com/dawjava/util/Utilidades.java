@@ -26,7 +26,7 @@ public class Utilidades {
 				System.out.println("Valor introducido incorrecto.");
 			}
 		} while (resp != 's' && resp != 'S' && resp != 'n' && resp != 'N');
-		if (resp == 's' || resp != 'S') {
+		if (resp == 's' || resp == 'S') {
 			ret = true;
 		} else {
 			ret = false;
@@ -59,12 +59,12 @@ public class Utilidades {
 	 * @return
 	 */
 	public static boolean validarPasedeoro() {
-		Puntuacion p = new Puntuacion();
-		Audicion a = new Audicion();
+		Puntuacion p = new Puntuacion(); ///¿Para qué estos 2 campos?
+		Audicion a = new Audicion();///¿?
 		boolean ret;
 		Scanner teclado;
 		char resp;
-		a.setPuntuacionmedia(10);
+		a.setPuntuacionmedia(10);///¿?
 		do {
 			System.out.println("Pulse s para Sí o n para No");
 			teclado = new Scanner(System.in, "ISO-8859-1");
@@ -73,7 +73,7 @@ public class Utilidades {
 				System.out.println("Valor introducido incorrecto.");
 			}
 		} while (resp != 's' && resp != 'S' && resp != 'n' && resp != 'N');
-		if (resp == 's' || resp != 'S') {
+		if (resp == 's' || resp == 'S') {
 			System.out.println("Da el pase de Oro ");
 			System.out.println("La puntuacion media ahora es de: " + a.getPuntuacionmedia());
 			ret = true;
